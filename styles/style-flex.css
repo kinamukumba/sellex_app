@@ -1,0 +1,79 @@
+@media (max-width: 800px) {
+
+    /* telemóveis */
+    /*HEADER*/
+    .body-container .header {
+        padding-top: 30px;
+
+        .header-container {
+            width: 86%;
+
+            .nav-container {
+                display: none;
+            }
+
+            .icon-menu {
+                display: flex;
+            }
+        }
+    }
+
+    /*ALL MAIN SECTION*/
+    .main .section-flex {
+        width: 905;
+        padding: 50px 5% 70px 5%;
+
+        .title {
+            font-size: 20px;
+            width: 90%;
+        }
+
+        .text-title {
+            width: 90%;
+            font-size: 13px;
+        }
+    }
+
+    /*HERO SECTION*/
+    .main .section-hero-container {
+        width: 90%;
+        padding: 30px 5% 50px 5%;
+    }
+
+    .section-hero-container .hero-context {
+        .hero-title {
+            width: 90%;
+            font-size: 40px;
+            padding: 0 5%;
+
+            span {
+                font-size: 40px;
+                min-height: 50px;
+                max-width: 80%;
+            }
+        }
+
+        .input-email-book {
+            width: 100%;
+            padding: 0;
+            flex-direction: column;
+
+            .input {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+                margin: 2%;
+            }
+        }
+    }
+
+    /*PROBLEM SECTION*/
+.main .section-problem-container{
+    .card-problem-sellex{
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+}

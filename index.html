@@ -64,6 +64,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/style-flex.css">
+    <link rel="stylesheet" href="/styles/fixes.css">
 
 </head>
 
@@ -83,6 +85,9 @@
                     </ul>
                     <a href=""><button class="btn-book-demo">Agendar Demo</button></a>
                 </nav>
+                <div class="icon-menu">
+                    <i class="ri-menu-line"></i>
+                </div>
             </div>
         </header>
         <main class="main">
@@ -96,7 +101,8 @@
                     <div class="hero-context">
                         <h1 class="hero-title">
                             Venda no digital sem precisar de
-                            <span>website.</span>
+                            <span class="typewriter"
+                                data-words="website....,uma equipa de venda ou atendimento....,sair de casa...."></span>
                         </h1>
                         <p class="text">
                             Crie sua loja online, organize pedidos e automatize o atendimento com IA — tudo em
@@ -111,7 +117,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="section-problem-container section-flex">
+                <section class="section-problem-container section-flex wow animate__animated animate__zoomIn">
                     <div class="tags">
                         <p>O problema que a Sellex resolve</p>
                     </div>
@@ -119,7 +125,7 @@
                         Gerir um pequeno negócio no digital ainda é mais difícil do que deveria
                     </h2>
                     <div class="card-problem-sellex">
-                        <div class="card-problem">
+                        <div class="card-problem wow animate__animated animate__fadeInUp">
                             <div class="avatar sellex-imgs">
                                 <img src="/assets/img/avatar/8899029.png" alt="">
                             </div>
@@ -130,7 +136,7 @@
                             </p>
                         </div>
 
-                        <div class="card-problem">
+                        <div class="card-problem wow animate__animated animate__fadeInUp">
                             <div class="avatar sellex-imgs">
                                 <img src="/assets/img/avatar/8898860.png" alt="">
                             </div>
@@ -141,7 +147,7 @@
                             </p>
                         </div>
 
-                        <div class="card-problem">
+                        <div class="card-problem wow animate__animated animate__fadeInUp">
                             <div class="avatar sellex-imgs">
                                 <img src="/assets/img/avatar/8898869.png" alt="">
                             </div>
@@ -153,7 +159,7 @@
                             </p>
                         </div>
 
-                        <div class="card-problem">
+                        <div class="card-problem wow animate__animated animate__fadeInUp">
                             <div class="avatar sellex-imgs">
                                 <img src="/assets/img/avatar/8898865.png" alt="">
                             </div>
@@ -164,7 +170,7 @@
                             </p>
                         </div>
 
-                        <div class="card-problem">
+                        <div class="card-problem wow animate__animated animate__fadeInUp">
                             <div class="avatar sellex-imgs">
                                 <img src="/assets/img/avatar/8898857.png" alt="">
                             </div>
@@ -175,7 +181,7 @@
                             </p>
                         </div>
 
-                        <div class="card-problem">
+                        <div class="card-problem wow animate__animated animate__fadeInUp">
                             <div class="avatar sellex-imgs">
                                 <img src="/assets/img/avatar/8899029.png" alt="">
                             </div>
@@ -208,9 +214,9 @@
                                 <h3 class="subtitle">Catálogo digital de produtos</h3>
                             </div>
                             <div class="bottom">
-                                <p class="text">
+                                <p class="text wow animate__animated animate__fadeInUp">
                                     Crie e organize todos os seus produtos num catálogo digital moderno e fácil de
-                                    partilhar. <br>
+                                    partilhar. <br> <br>
                                     Adicione imagens, descrições, preços e categorias para apresentar
                                     seus produtos de forma profissional.
                                 </p>
@@ -219,13 +225,13 @@
 
                         <div class="card-resurse">
                             <div class="top-c">
-                                <div class="icon"><i class="ri-barcode-box-line"></i></div>
+                                <div class="icon"><i class="ri-bar-chart-grouped-line"></i></div>
                                 <h3 class="subtitle">Gestão inteligente de pedidos</h3>
                             </div>
                             <div class="bottom">
-                                <p class="text">
+                                <p class="text wow animate__animated animate__fadeInUp">
                                     Receba e acompanhe todos os pedidos dos seus clientes num painel organizado.
-                                    <br>
+                                    <br> <br>
                                     Evite perder pedidos nas mensagens e tenha total controle sobre o status das vendas.
                                 </p>
                             </div>
@@ -233,30 +239,26 @@
 
                         <div class="card-resurse">
                             <div class="top-c">
-                                <div class="icon"><i class="ri-barcode-box-line"></i></div>
+                                <div class="icon"><i class="ri-line-chart-line"></i></div>
                                 <h3 class="subtitle">Painel de gestão e relatórios</h3>
                             </div>
                             <div class="bottom">
-                                <p class="text">
-                                    Crie e organize todos os seus produtos num catálogo digital moderno e fácil de
-                                    partilhar.
-                                    <br>
-                                    Adicione imagens, descrições, preços e categorias para apresentar seus
-                                    produtos de forma profissional.
+                                <p class="text wow animate__animated animate__fadeInUp">
+                                    Tenha acesso a relatórios simples e claros sobre as suas vendas, produtos mais
+                                    vendidos e desempenho do seu negócio.
                                 </p>
                             </div>
                         </div>
 
                         <div class="card-resurse">
                             <div class="top-c">
-                                <div class="icon"><i class="ri-barcode-box-line"></i></div>
+                                <div class="icon"><i class="ri-links-line"></i></div>
                                 <h3 class="subtitle">Link e QR Code da sua loja</h3>
                             </div>
                             <div class="bottom">
-                                <p class="text">
-                                    Receba e acompanhe todos os pedidos dos seus clientes num painel organizado.
-                                    <br>
-                                    Evite perder pedidos nas mensagens e tenha total controle sobre o status das vendas.
+                                <p class="text wow animate__animated animate__fadeInUp">
+                                    Cada vendedor terá um link exclusivo da sua loja para compartilhar facilmente no
+                                    WhatsApp, Instagram, Facebook ou qualquer outra rede social.
                                 </p>
                             </div>
                         </div>
@@ -264,11 +266,11 @@
                     </div>
                     <div class="card-only-one">
                         <div class="top-c">
-                            <div class="icon"><i class="ri-barcode-box-line"></i></div>
+                            <div class="icon"><i class="ri-chat-smile-ai-line"></i></div>
                             <h3 class="subtitle">Atendimento automático com IA</h3>
                         </div>
                         <div class="bottom">
-                            <p class="text">
+                            <p class="text wow animate__animated animate__fadeInUp">
                                 A Sellex utiliza inteligência artificial para responder automaticamente às perguntas
                                 mais comuns dos clientes, como preços, disponibilidade e informações dos produtos.
                             </p>
@@ -279,12 +281,106 @@
                         </div>
                     </div>
                 </div>
+                <div class="context">
+                    <div class="text-context">
+                        <h1 class="title">Poderosa Compreensão Contextual</h1>
+                        <p class="text wow animate__animated animate__fadeInUp">
+                            A Sellex utiliza inteligência avançada para compreender o contexto das interações entre o
+                            negócio e seus clientes. Isso significa que a plataforma consegue interpretar perguntas,
+                            identificar intenções e fornecer respostas relevantes de forma automática.
+                            <br><br>
+                            Ao entender o que o cliente procura — seja um produto, um serviço ou informações sobre o
+                            negócio
+                            — a Sellex ajuda a tornar o atendimento mais rápido, inteligente e eficiente, melhorando a
+                            experiência do cliente e reduzindo o esforço do empreendedor.
+                        </p>
+                        <a href=""><button class="btn-book-demo">Agendar Demo</button></a>
+                    </div>
+                    <div class="img-context sellex-imgs">
+                        <img src="/assets/img/Branding_9.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <section id="como_funciona" class="section-how-working-container section-flex">
+                <h2 class="title">
+                    COMO FUNCIONA
+                </h2>
+                <p class="text-title">
+                    A Sellex foi projetada para ser fácil de usar, mesmo para quem não tem experiência com tecnologia.
+                </p>
+                <div class="step-working">
+                    <div class="step wow animate__animated animate__backInUp">
+                        <div class="icon">
+                            <i class="ri-user-line"></i>
+                        </div>
+                        <div class="num">
+                            1
+                        </div>
+                        <h1>Crie sua conta</h1>
+                        <p>Registe-se na plataforma em poucos minutos e configure o perfil da sua loja.</p>
+                    </div>
+
+                    <div class="step wow animate__animated animate__backInUp">
+                        <div class="icon">
+                            <i class="ri-barcode-box-line"></i>
+                        </div>
+                        <div class="num">
+                            2
+                        </div>
+                        <h1>Adicione seus produtos</h1>
+                        <p>Cadastre os produtos que deseja vender, incluindo fotos, preços e descrições.</p>
+                    </div>
+
+                    <div class="step wow animate__animated animate__backInUp">
+                        <div class="icon">
+                            <i class="ri-stackshare-line"></i>
+                        </div>
+                        <div class="num">
+                            3
+                        </div>
+                        <h1>Compartilhe sua loja</h1>
+                        <p>Receba um link ou QR Code da sua loja e compartilhe com seus clientes nas redes sociais ou no
+                            WhatsApp.</p>
+                    </div>
+
+                    <div class="step wow animate__animated animate__backInUp">
+                        <div class="icon">
+                            <i class="ri-bar-chart-grouped-line"></i>
+                        </div>
+                        <div class="num">
+                            4
+                        </div>
+                        <h1>Receba e gerencie pedidos</h1>
+                        <p>Todos os pedidos feitos pelos clientes serão organizados automaticamente no seu painel de
+                            gestão.</p>
+                    </div>
+                </div>
+                <div class="context">
+                    <div class="text-context">
+                        <h1 class="title">Tudo que você precisa em um dashboard</h1>
+                        <p class="text wow animate__animated animate__fadeInUp">
+                            A Sellex reúne em um só lugar todas as ferramentas necessárias para gerir o seu negócio no
+                            digital. Através de um dashboard simples e intuitivo, você pode acompanhar pedidos, gerir
+                            produtos ou serviços, responder clientes e monitorar o desempenho das suas vendas.
+                            <br><br>
+                            Com tudo centralizado numa única plataforma, fica mais fácil tomar decisões, organizar
+                            operações e focar no crescimento do seu negócio.
+                        </p>
+                        <a href=""><button class="btn-book-demo">Agendar Demo</button></a>
+                    </div>
+                    <div class="img-context sellex-imgs">
+                        <img src="/assets/img/qr-code-scan_bewe.png" alt="">
+                    </div>
+                </div>
             </section>
         </main>
     </div>
 
+    <script src="/utils/functions/useTypewriter.js"></script>
     <script src="/utils/libs/useAnimate.js"></script>
     <script src="/utils/functions/useBcgSpace.js"></script>
+    <script src="/utils/functions/useCheckLink.js"></script>
 </body>
 
 </html>
