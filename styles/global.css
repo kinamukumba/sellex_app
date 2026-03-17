@@ -1168,7 +1168,8 @@ body .body-container {
                     }
                 }
 
-                .input, textarea {
+                .input,
+                textarea {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -1191,13 +1192,14 @@ body .body-container {
                         border-radius: 20px;
                     }
                 }
-                textarea{
+
+                textarea {
                     min-height: 100px;
                     padding: 20px 2.5%;
                     margin: 1% 0 0 0;
                 }
 
-                .btn-forms{
+                .btn-forms {
                     width: 100%;
                     height: auto;
                     display: flex;
@@ -1206,11 +1208,13 @@ body .body-container {
                     justify-content: space-between;
                     padding-top: 10px;
                 }
-                .btn-forms>:nth-child(1){
+
+                .btn-forms>:nth-child(1) {
                     background-color: #757575;
                     gap: 5%;
                 }
-                .btn-forms>:nth-child(2){
+
+                .btn-forms>:nth-child(2) {
                     background-color: var(--sellex_main);
                     gap: 3%;
                     width: 200px;
@@ -1221,6 +1225,84 @@ body .body-container {
                 opacity: 1;
                 transform: translateX(0);
                 pointer-events: all;
+            }
+        }
+    }
+}
+
+/*FOOTER*/
+.footer {
+    position: relative;
+    width: 90%;
+    height: auto;
+    padding: 50px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(/assets/img/logo/Sellexlogo2.png);
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+    .text-footer {
+        width: 60%;
+        height: auto;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .title-footer {
+        width: 100%;
+        height: auto;
+        padding: 70px 0 20px 0;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .nav-footer{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 30px;
+
+        ul{
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 2%;
+
+            li{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 2%;
+
+                a{
+                    font-size: 14px;
+                }
+            }
+
+            li:hover a i{
+                transform: translateY(50%);
             }
         }
     }
