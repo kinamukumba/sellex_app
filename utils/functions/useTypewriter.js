@@ -1,8 +1,10 @@
-const typewriterEl = document.querySelector(".typewriter");
+const typewriterEls = document.querySelectorAll(".typewriter");
 
-if (typewriterEl) {
-  const words = (typewriterEl.dataset.words || "").split(",").map((w) => w.trim()).filter(Boolean);
-  if (words.length > 0) {
+if (typewriterEls.length > 0) {
+  typewriterEls.forEach((typewriterEl) => {
+    const words = (typewriterEl.dataset.words || "").split(",").map((w) => w.trim()).filter(Boolean);
+    if (words.length === 0) return;
+
     let wordIndex = 0;
     let letterIndex = 0;
     let isDeleting = false;
@@ -38,5 +40,5 @@ if (typewriterEl) {
 
     // Start typing a little after page load
     setTimeout(type, 1000);
-  }
+  });
 }
