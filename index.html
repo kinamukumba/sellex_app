@@ -65,11 +65,13 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/style-flex.css">
-    <link rel="stylesheet" href="/styles/fixes.css">
+    <!--ink rel="stylesheet" href="/styles/fixes.css"-->
 
 </head>
 
 <body>
+
+    <div class="mask"></div>
     <div class="body-container">
         <header class="header">
             <div class="header-container">
@@ -83,7 +85,7 @@
                         <li class="item-list"><a href="#beneficios">Benefícios</a></li>
                         <li class="item-list"><a href="#contatos">Contatos</a></li>
                     </ul>
-                    <a href=""><button class="btn-book-demo">Agendar Demo</button></a>
+                    <button class="btn-book-demo">Agendar Demo</button>
                 </nav>
                 <div class="icon-menu">
                     <i class="ri-menu-line"></i>
@@ -113,7 +115,7 @@
                             <div class="input">
                                 <input type="text" placeholder="Email ou nº de telefona">
                             </div>
-                            <button>Agendar Demo</button>
+                            <button class="book-demo">Agendar Demo</button>
                         </div>
                     </div>
                 </section>
@@ -194,7 +196,6 @@
                     </div>
                 </section>
             </div>
-
             <section id="recursos" class="section-recorse-container section-flex">
                 <div class="tags">
                     <p>#1 em Angola</p>
@@ -294,14 +295,13 @@
                             — a Sellex ajuda a tornar o atendimento mais rápido, inteligente e eficiente, melhorando a
                             experiência do cliente e reduzindo o esforço do empreendedor.
                         </p>
-                        <a href=""><button class="btn-book-demo">Agendar Demo</button></a>
+                        <button class="btn-book-demo book-demo">Agendar Demo</button>
                     </div>
                     <div class="img-context sellex-imgs">
                         <img src="/assets/img/Branding_9.png" alt="img_sellex">
                     </div>
                 </div>
             </section>
-
             <section id="como_funciona" class="section-how-working-container section-flex">
                 <h2 class="title">
                     COMO FUNCIONA
@@ -367,14 +367,13 @@
                             Com tudo centralizado numa única plataforma, fica mais fácil tomar decisões, organizar
                             operações e focar no crescimento do seu negócio.
                         </p>
-                        <a href=""><button class="btn-book-demo">Agendar Demo</button></a>
+                        <button class="btn-book-demo book-demo">Agendar Demo</button>
                     </div>
                     <div class="img-context sellex-imgs">
                         <img src="/assets/img/qr-code-scan_bewe.png" alt="img_sellex">
                     </div>
                 </div>
             </section>
-
             <section id="beneficios" class="section-service-container section-flex">
                 <div class="tags">
                     <p>Benefícios</p>
@@ -444,7 +443,6 @@
                     </div>
                 </div>
             </section>
-
             <section id="contatos" class="section-contact-container section-flex">
                 <div class="context-contact">
                     <div class="img-contact sellex-imgs wow animate__animated animate__zoomIn">
@@ -572,6 +570,121 @@
             <p>&copy; 2026 Sellex. Todos os direitos reservados.</p>
         </footer>
     </div>
+    <div class="container-book">
+        <form action="" class="form-book-demo">
+            <div class="close">
+                <i class="ri-close-line"></i>
+            </div>
+            <div class="step-progress-bar">
+                <p class="controle-progress">Passo <i>1</i> de 7 <i class="perc"></i></p>
+                <span class="bar"><i class="progress"></i></span>
+            </div>
+            <div class="step-book-demo">
+                <div class="step">
+                    <h1 class="title-step">Como devemos chamá-lo?</h1>
+                    <div class="input">
+                        <i class="ri-user-line"></i>
+                        <input type="text" placeholder="Nome completo">
+                    </div>
+                    <div class="btn-step">
+                        <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
+                        <button type="button">Avançar <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h1 class="title-step">O seu email?</h1>
+                    <div class="input">
+                        <i class="ri-record-mail-line"></i>
+                        <input type="email" placeholder="Email principal">
+                    </div>
+                    <div class="btn-step">
+                        <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
+                        <button type="button">Avançar <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h1 class="title-step">Qual é o seu WhatsApp?</h1>
+                    <div class="input">
+                        <i class="ri-phone-line"></i>
+                        <input type="number" placeholder="Número de telefone">
+                    </div>
+                    <div class="btn-step">
+                        <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
+                        <button type="button">Avançar <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h1 class="title-step">Sobre o negócio (qualificação)</h1>
+                    <select name="" id="">
+                        <option selected disabled value="Tipo de negócio">Tipo de negócio</option>
+                        <option value="Loja">Loja</option>
+                        <option value="Restaurante">Restaurante</option>
+                        <option value="Barbearia">Barbearia</option>
+                        <option value="Prestação de serviços">Prestação de serviços</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <div class="btn-step">
+                        <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
+                        <button type="button">Avançar <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h1 class="title-step">Como você gerencia seus pedidos atualmente?</h1>
+                    <select name="" id="">
+                        <option selected value="WhatsApp">WhatsApp</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Caderno/Manual">Caderno/Manual</option>
+                        <option value="Planilhas">Planilhas</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <div class="btn-step">
+                        <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
+                        <button type="button">Avançar <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h1 class="title-step">Volume médio de pedidos por dia?</h1>
+                    <select name="" id="">
+                        <option selected value="1 - 10">1 - 10</option>
+                        <option value="10 - 30">10 - 30</option>
+                        <option value="30 - 100">30 - 100</option>
+                        <option value="+100">+100</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <div class="btn-step">
+                        <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
+                        <button type="button">Avançar <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h1 class="title-step">Qual é o seu maior desafio hoje?</h1>
+                    <textarea name="" id=""
+                        placeholder="Ex: organizar pedidos, responder clientes, controlar vendas…"></textarea>
+                    <div class="btn-step">
+                        <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
+                        <button type="button">Enviar <i class="ri-arrow-right-line"></i></button>
+                    </div>
+                </div>
+
+                <div class="step active">
+                    <div class="img">
+                        <img src="/assets/img/ok-48.png" alt="img_sellex">
+                    </div>
+                    <h1 class="title-step ok">Qual é o seu maior desafio hoje?</h1>
+                    <div class="btn-step">
+                        <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
+                        <button style="background-color: green;" type="button">Finalizar <i class="ri-check-double-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <script src="/utils/functions/useTypewriter.js"></script>
     <script src="/utils/libs/useAnimate.js"></script>
@@ -580,6 +693,7 @@
     <script src="/utils/functions/useAlert.js"></script>
     <script src="/utils/functions/useStepForm.js"></script>
     <script src="/utils/functions/useScrollSpy.js"></script>
+    <script src="/assets/script/script.js"></script>
 </body>
 
 </html>

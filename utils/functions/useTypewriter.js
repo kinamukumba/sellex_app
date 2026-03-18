@@ -1,6 +1,21 @@
-const typewriterEls = document.querySelectorAll(".typewriter");
+const typewriterTimeouts = new Set();
 
-if (typewriterEls.length > 0) {
+function clearTypewriterTimeouts() {
+  for (const timeout of typewriterTimeouts) {
+    clearTimeout(timeout);
+  }
+  typewriterTimeouts.clear();
+}
+
+function initTypewriter() {
+  clearTypewriterTimeouts();
+
+  const typewriterEls = document.querySelectorAll(".typewriter");
+
+  if (typewriterEls.length === 0) {
+    return;
+  }
+
   typewriterEls.forEach((typewriterEl) => {
     const words = (typewriterEl.dataset.words || "").split(",").map((w) => w.trim()).filter(Boolean);
     if (words.length === 0) return;
@@ -35,10 +50,20 @@ if (typewriterEls.length > 0) {
       if (shouldPauseAfterWord) delay = 1400;
       if (shouldPauseAfterDelete) delay = 500;
 
-      setTimeout(type, delay);
+      const timeout = setTimeout(type, delay);
+      typewriterTimeouts.add(timeout);
     };
 
     // Start typing a little after page load
-    setTimeout(type, 1000);
+    const timeout = setTimeout(type, 1000);
+    typewriterTimeouts.add(timeout);
   });
+}
+
+window.initTypewriter = initTypewriter;
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initTypewriter);
+} else {
+  initTypewriter();
 }

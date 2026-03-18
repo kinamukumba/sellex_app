@@ -20,7 +20,7 @@
 
     /*ALL MAIN SECTION*/
     .main .section-flex {
-        width: 905;
+        width: 90%;
         padding: 50px 5% 70px 5%;
 
         .title {
@@ -70,10 +70,20 @@
     }
 
     /*PROBLEM SECTION*/
-.main .section-problem-container{
-    .card-problem-sellex{
-        grid-template-columns: repeat(6, 1fr);
+    .main .section-problem-container {
+        width: 100%;
+        padding: 50px 0 70px 0;
+        .card-problem-sellex {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            padding: 20px 0 20px -00%;
+
+            .card-problem{
+                min-width: 300px;
+                min-height: 210px;
+            }
+        }
     }
-}
 
 }

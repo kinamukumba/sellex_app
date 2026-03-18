@@ -129,7 +129,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(40, 40, 40, 0.648);
+    background-color: rgba(19, 19, 19, 0.813);
     backdrop-filter: blur(5px);
     display: none;
     align-items: center;
@@ -1258,52 +1258,250 @@ body .body-container {
 }
 
 
-    .text-footer {
-        width: 60%;
-        height: auto;
+.text-footer {
+    width: 60%;
+    height: auto;
 
-        p {
-            text-align: center;
-        }
-    }
-
-    .title-footer {
-        width: 100%;
-        height: auto;
-        padding: 70px 0 20px 0;
-        font-size: 40px;
+    p {
         text-align: center;
     }
+}
 
-    .nav-footer{
-        width: 100%;
+.title-footer {
+    width: 100%;
+    height: auto;
+    padding: 70px 0 20px 0;
+    font-size: 40px;
+    text-align: center;
+}
+
+.nav-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+    ul {
+        width: 80%;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        padding-top: 20px;
-        padding-bottom: 30px;
+        gap: 2%;
 
-        ul{
-            width: 80%;
+        li {
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: center;
             gap: 2%;
 
-            li{
+            a {
+                font-size: 14px;
+            }
+        }
+
+        li:hover a i {
+            transform: translateY(50%);
+        }
+    }
+}
+
+/*BOOK-DEMO*/
+.container-book {
+    width: 90%;
+    height: auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &.open {
+        display: flex;
+    }
+
+
+    .form-book-demo {
+        width: 30%;
+        height: auto;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #212121;
+        border-radius: 10px;
+
+
+        .close {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+
+
+            i {
+                color: var(--sellex_sec);
+                font-size: 20px;
+                display: flex;
+                margin-left: auto;
+                cursor: pointer;
+            }
+        }
+
+        .step-progress-bar {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0 10px 0;
+
+            .controle-progress {
+                width: 100%;
                 display: flex;
                 flex-direction: row;
-                align-items: center;
-                gap: 2%;
+                align-content: center;
+                color: #828282;
+                gap: 1%;
 
-                a{
-                    font-size: 14px;
+                i {
+                    color: #828282;
+                }
+
+                .perc {
+                    display: flex;
+                    margin-left: auto;
                 }
             }
 
-            li:hover a i{
-                transform: translateY(50%);
+            .bar {
+                width: 100%;
+                position: relative;
+                height: 6px;
+                border-radius: 10px;
+                background-color: #828282;
+                margin-top: 10px;
+
+                .progress {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 14.2%;
+                    height: 100%;
+                    background-color: var(--sellex_sec);
+                    border-radius: 10px;
+                }
+            }
+        }
+
+
+        .step-book-demo {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            padding-top: 20px;
+
+            .step {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transform: translateX(18px);
+                pointer-events: none;
+                transition: opacity 240ms ease, transform 240ms ease, max-height 240ms ease;
+
+                .img {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: auto;
+                        height: 150px;
+                        margin-bottom: 2%;
+                        object-fit: cover;
+                    }
+                }
+
+                h1 {
+                    font-size: 20px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+                h1.ok{
+                    text-align: center;
+                    color: green;
+                    padding-top: 0;
+                }
+
+                .input,
+                textarea,
+                select {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 95%;
+                    min-height: 50px;
+                    padding: 0 2.5%;
+                    border-radius: 20px;
+                    background-color: rgba(59, 59, 59, 0.429);
+                    margin: 5% 0 0 0;
+                    gap: 1%;
+
+                    i {
+                        font-size: 15px;
+                    }
+
+                    input {
+                        width: 100%;
+                        min-height: 50px;
+                        height: 100%;
+                        border-radius: 20px;
+                    }
+                }
+
+                textarea {
+                    min-height: 80px;
+                    padding: 20px 2.5%;
+                    margin: 1% 0 0 0;
+                }
+
+                select {
+                    padding-left: 2.5%;
+                }
+
+                .btn-step {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-top: 30px;
+                }
+
+                .btn-step>:nth-child(1) {
+                    background-color: #757575;
+                    gap: 5%;
+                }
+
+                .btn-step>:nth-child(2) {
+                    background-color: var(--sellex_main);
+                    gap: 3%;
+                    width: 200px;
+                }
+            }
+
+            .step.active {
+                opacity: 1;
+                max-height: 2000px; /* large enough for any step content */
+                transform: translateX(0);
+                pointer-events: auto;
             }
         }
     }
