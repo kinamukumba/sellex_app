@@ -48,8 +48,8 @@
 
             span {
                 font-size: 40px;
-                min-height: 50px;
-                max-width: 80%;
+                min-height: 55px;
+                max-width: 90%;
             }
         }
 
@@ -121,7 +121,8 @@
 
                 img {
                     width: auto;
-                    height: 300px;
+                    height: 350px;
+                    object-fit: cover;
                 }
             }
         }

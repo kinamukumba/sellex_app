@@ -831,7 +831,8 @@ body .body-container {
 
             img {
                 width: auto;
-                height: 300px;
+                height: 350px;
+                object-fit: cover;
             }
         }
     }
