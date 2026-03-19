@@ -99,6 +99,10 @@ button:hover {
     background-color: transparent;
     z-index: 2000;
 }
+input, button, select {
+    touch-action: manipulation;
+}
+
 
 /* Typewriter effect for hero title */
 .typewriter {
