@@ -397,6 +397,10 @@ body .body-container {
 
             li {
                 padding: 10px;
+                font-size: 14px;
+                a{
+                     font-size: 14px;
+                }
             }
         }
 
