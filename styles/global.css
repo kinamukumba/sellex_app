@@ -102,6 +102,11 @@ button:hover {
 input, button, select {
     touch-action: manipulation;
 }
+input, textarea, select {
+    font-size: 16px;
+    transform: scale(0.875);
+    transform-origin: left;
+}
 
 
 /* Typewriter effect for hero title */
