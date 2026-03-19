@@ -199,3 +199,33 @@ steps.forEach((step, stepIndex) => {
 
 // Initialize
 showStep(currentStepIndex);
+
+// Mobile menu toggle
+const iconMenuToggle = document.querySelector('.icon-menu');
+const mobileMenu = document.querySelector('.menu');
+
+const closeMobileMenu = () => {
+  if (!mobileMenu) return;
+  mobileMenu.classList.remove('open');
+};
+
+iconMenuToggle?.addEventListener('click', (event) => {
+  event.stopPropagation();
+  if (!mobileMenu) return;
+  mobileMenu.classList.toggle('open');
+});
+
+// Close menu when clicking outside or selecting an item
+document.addEventListener('click', (event) => {
+  if (!mobileMenu?.classList.contains('open')) return;
+  if (event.target.closest('.menu') || event.target.closest('.icon-menu')) return;
+  closeMobileMenu();
+});
+
+mobileMenu?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+mobileMenu?.querySelectorAll('.btn-book-demo').forEach((button) => {
+  button.addEventListener('click', closeMobileMenu);
+});
