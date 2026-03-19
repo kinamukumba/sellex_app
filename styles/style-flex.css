@@ -171,7 +171,8 @@
             flex-direction: column;
 
             .img-service img {
-                height: 250px;
+                height: 230px;
+                object-fit: cover;
             }
 
             .container-service {
