@@ -73,17 +73,174 @@
     .main .section-problem-container {
         width: 100%;
         padding: 50px 0 70px 0;
+
         .card-problem-sellex {
             display: flex;
             flex-direction: row;
             overflow-x: auto;
             padding: 20px 0 20px -00%;
 
-            .card-problem{
+            .card-problem {
                 min-width: 300px;
                 min-height: 210px;
             }
         }
     }
 
+    /*RECURSE SECTION*/
+    .main .section-recorse-container {
+        .card-recurse-sellex {
+            flex-direction: column;
+
+            .all-card-recurse {
+                width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+
+                .card-resurse {
+                    margin: 1% 0;
+                }
+            }
+
+            .card-only-one {
+                width: 90%;
+                padding: 30px 5%;
+                margin-top: 13%;
+            }
+        }
+
+        .context {
+            flex-direction: column;
+            max-height: 100%;
+
+            .text-context {
+                width: 100%;
+            }
+        }
+
+        .img-context {
+            width: 100%;
+
+            img {
+                width: auto;
+                height: 200px;
+            }
+        }
+    }
+
+    /*HOW WORKING SECTION*/
+    .main .section-how-working-container {
+        .step-working {
+            grid-template-columns: repeat(1, 1fr);
+
+            .step {
+                padding: 10px 20px;
+            }
+        }
+
+        .step-working::after {
+            display: none;
+        }
+
+        .context {
+            flex-direction: column;
+            max-height: 100%;
+            margin-top: 5%;
+
+            .text-context {
+                width: 100%;
+            }
+        }
+
+        .img-context {
+            width: 100%;
+
+            img {
+                width: auto;
+                height: 200px;
+            }
+        }
+    }
+
+    /*SERVICE SECTION*/
+    .main .section-service-container {
+        height: 100%;
+
+        .cards-service {
+            flex-direction: column;
+
+            .img-service img {
+                height: 250px;
+            }
+
+            .container-service {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+
+                .card-service {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    /*CONTACT SECTION*/
+    .main .section-contact-container {
+        flex-direction: column;
+        height: 100%;
+
+        .context-contact {
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                text-align: center;
+            }
+
+            ul {
+                width: 90%;
+            }
+        }
+
+        .form-contact {
+            min-height: 300px;
+
+            .step-form-inputs {
+                height: 100%;
+
+                .form-input {
+                    height: 100%;
+
+                    .double-input {
+                        flex-direction: column;
+                        height: 105px;
+                        gap: 0;
+
+                        .input {
+                            margin: 1% 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*FOOTER*/
+    .footer {
+        .text-footer{
+            width: 100%;
+        }
+    }
+
+    .nav-footer{
+        ul{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5%;
+            li{
+                padding: 10px 0;
+            }
+        }
+    }
 }
