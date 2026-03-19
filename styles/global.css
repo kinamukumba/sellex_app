@@ -824,14 +824,14 @@ body .body-container {
 
         .img-context {
             width: 30%;
-            height: 100%;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
 
             img {
                 width: auto;
-                height: 100%;
+                height: 300px;
             }
         }
     }
