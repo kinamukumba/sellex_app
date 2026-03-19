@@ -95,6 +95,7 @@
             .all-card-recurse {
                 width: 100%;
                 grid-template-columns: repeat(1, 1fr);
+                gap: 0;
 
                 .card-resurse {
                     margin: 1% 0;
@@ -104,7 +105,7 @@
             .card-only-one {
                 width: 90%;
                 padding: 30px 5%;
-                margin-top: 13%;
+                margin-top: 1%;
             }
         }
 
@@ -114,6 +115,10 @@
 
             .text-context {
                 width: 100%;
+
+                button{
+                    width: 100%;
+                }
             }
 
             .img-context {
@@ -121,7 +126,7 @@
 
                 img {
                     width: auto;
-                    height: 350px;
+                    height: 250px;
                     object-fit: cover;
                 }
             }
@@ -151,6 +156,10 @@
 
             .text-context {
                 width: 100%;
+
+                button{
+                    width: 100%;
+                }
             }
 
             .img-context {
@@ -221,7 +230,7 @@
                         gap: 0;
 
                         .input {
-                            margin: 1% 0;
+                            margin: 1.2% 0;
                         }
                     }
                 }
@@ -256,9 +265,9 @@
     }
 
     /*BOOK-DEMO*/
-.container-book{
-    .form-book-demo{
-        width: 90%;
+    .container-book {
+        .form-book-demo {
+            width: 90%;
+        }
     }
-}
 }
