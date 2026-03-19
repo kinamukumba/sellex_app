@@ -115,16 +115,18 @@
             .text-context {
                 width: 100%;
             }
-        }
 
-        .img-context {
-            width: 100%;
+            .img-context {
+                width: 100%;
 
-            img {
-                width: auto;
-                height: 200px;
+                img {
+                    width: auto;
+                    height: 300px;
+                }
             }
         }
+
+
     }
 
     /*HOW WORKING SECTION*/
@@ -149,14 +151,14 @@
             .text-context {
                 width: 100%;
             }
-        }
 
-        .img-context {
-            width: 100%;
+            .img-context {
+                width: 100%;
 
-            img {
-                width: auto;
-                height: 200px;
+                img {
+                    width: auto;
+                    height: 400px;
+                }
             }
         }
     }
@@ -227,20 +229,27 @@
 
     /*FOOTER*/
     .footer {
-        .text-footer{
+        .text-footer {
             width: 100%;
         }
     }
 
-    .nav-footer{
-        ul{
+    .nav-footer {
+        ul {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 5%;
-            li{
+
+            li {
                 padding: 10px 0;
             }
         }
+    }
+
+    .orb-1,
+    .orb-2,
+    .orb-3 {
+        display: none;
     }
 }
