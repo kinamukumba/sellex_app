@@ -1,3 +1,235 @@
+@media (max-width: 1405px) {
+
+    /* laptop */
+    /*HEADER*/
+    .body-container .header {
+        .header-container {
+            width: 66%;
+
+            .nav-container {
+                .btn-book-demo {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1160px) {
+
+    /* tablets */
+    /*HEADER*/
+    .body-container .header {
+        .header-container {
+            width: 86%;
+
+            .nav-container {
+                .btn-book-demo {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    /*HERO SECTION*/
+    .section-hero-container .hero-context {
+        .hero-title {
+            width: 100%;
+            padding: 0 0;
+        }
+
+        .input-email-book {
+            width: 90%;
+            padding: 0 5%;
+        }
+    }
+
+    /*PROBLEM SECTION*/
+    .main .section-problem-container {
+        .card-problem-sellex {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /*RECURSE SECTION*/
+    .main .section-recorse-container {
+        .card-recurse-sellex {
+            flex-direction: column;
+
+            .all-card-recurse {
+                width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2%;
+
+                .card-resurse {
+                    margin: 1% 0;
+
+                }
+            }
+
+            .card-only-one {
+                width: 90%;
+                padding: 30px 5%;
+                margin-top: 3%;
+            }
+        }
+
+        .context {
+            width: 100%;
+            flex-direction: column;
+            max-height: 100%;
+
+            .text-context {
+                width: 100%;
+
+                button {
+                    width: 100%;
+                }
+            }
+
+            .img-context {
+                width: 100%;
+
+                img {
+                    width: auto;
+                    height: 250px;
+                    object-fit: cover;
+                }
+            }
+        }
+
+
+    }
+
+    /*HOW WORKING SECTION*/
+    .main .section-how-working-container {
+        .context {
+            flex-direction: column;
+            max-height: 100%;
+            margin-top: 5%;
+
+            .text-context {
+                width: 100%;
+
+                button {
+                    width: 100%;
+                }
+            }
+
+            .img-context {
+                width: 100%;
+
+                img {
+                    width: auto;
+                    height: 400px;
+                }
+            }
+        }
+    }
+
+    /*SERVICE SECTION*/
+    .main .section-service-container {
+        height: 100%;
+
+        .cards-service {
+            flex-direction: column;
+
+            .img-service img {
+                height: 230px;
+                object-fit: cover;
+            }
+
+            .container-service {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+
+                .card-service {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    /*CONTACT SECTION*/
+    .main .section-contact-container {
+        flex-direction: column;
+        height: 100%;
+        padding: 70px 15%;
+        align-items: center;
+        justify-content: center;
+
+        .context-contact {
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                text-align: center;
+            }
+
+            ul {
+                width: 90%;
+            }
+        }
+
+        .form-contact {
+            min-height: 300px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 5%;
+
+            .step-form-inputs {
+                height: 100%;
+
+                .form-input {
+                    height: 100%;
+
+                    .double-input {
+                        flex-direction: column;
+                        height: 105px;
+                        gap: 0;
+
+                        .input {
+                            margin: 1.2% 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*FOOTER*/
+    .footer {
+        .text-footer {
+            width: 100%;
+        }
+    }
+
+    .nav-footer {
+        ul {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5%;
+
+            li {
+                padding: 10px 0;
+            }
+        }
+    }
+
+    .orb-1,
+    .orb-2,
+    .orb-3 {
+        display: none;
+    }
+
+}
+
+
+
+
 @media (max-width: 800px) {
 
     /* telemóveis */
@@ -116,7 +348,7 @@
             .text-context {
                 width: 100%;
 
-                button{
+                button {
                     width: 100%;
                 }
             }
@@ -157,7 +389,7 @@
             .text-context {
                 width: 100%;
 
-                button{
+                button {
                     width: 100%;
                 }
             }

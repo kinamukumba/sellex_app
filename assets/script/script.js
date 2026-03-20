@@ -29,6 +29,63 @@ const isValidPhone = (value) => {
 
 const getValue = (el) => (el ? String(el.value || '').trim() : '');
 
+const BOOK_DEMO_API = './api/book_demo.php';
+
+const getBookingPayload = () => {
+  const step = (idx) => steps[idx];
+  if (!step) return null;
+
+  return {
+    name: getValue(step(0)?.querySelector('input')),
+    email: getValue(step(1)?.querySelector('input[type="email"]')),
+    phone: getValue(step(2)?.querySelector('input')),
+    business_type: getValue(step(3)?.querySelector('select')),
+    order_management: getValue(step(4)?.querySelector('select')),
+    order_volume: getValue(step(5)?.querySelector('select')),
+    challenge: getValue(step(6)?.querySelector('textarea')),
+    source_url: window.location.href,
+    submitted_at: new Date().toISOString(),
+  };
+};
+
+const sendBookDemo = async () => {
+  const payload = getBookingPayload();
+  if (!payload || !payload.name || !payload.email || !payload.phone) {
+    createError('Erro interno ao coletar os dados da demo. Tente novamente.');
+    return;
+  }
+
+  try {
+    const response = await fetch(BOOK_DEMO_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      const message = errorData?.message || 'Falha ao agendar demo. Por favor tente novamente.';
+      createError(message);
+      return;
+    }
+
+    const data = await response.json();
+    if (data.success) {
+      createAlert(data.message || 'Demo agendada com sucesso! Entraremos em contato.', 'success');
+      resetBooking();
+      closeBookingModal();
+      return;
+    }
+
+    createError(data.message || 'Não foi possível agendar a demo.');
+  } catch (error) {
+    console.error('book-demo submit error', error);
+    createError('Erro de rede ao enviar o formulário. Verifique sua conexão.');
+  }
+};
+
 const updateProgress = () => {
   if (!progressBar || !progressText || !steps.length) return;
 
@@ -184,12 +241,12 @@ steps.forEach((step, stepIndex) => {
     showStep(stepIndex - 1);
   });
 
-  nextBtn?.addEventListener('click', () => {
+  nextBtn?.addEventListener('click', async () => {
     if (!validateStep(stepIndex)) return;
 
     const isLastStep = stepIndex === steps.length - 1;
     if (isLastStep) {
-      closeBookingModal();
+      await sendBookDemo();
       return;
     }
 
