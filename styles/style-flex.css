@@ -477,6 +477,10 @@
         }
     }
 
+    .footer::before{
+        background-position: center 150%;
+        background-size: 110%;
+    }
     .nav-footer {
         ul {
             width: 100%;
@@ -501,5 +505,11 @@
         .form-book-demo {
             width: 90%;
         }
+    }
+
+    /*PAGES*/
+    .pages-container {
+        width: 90%;
+        padding: 0px 5% 30px 5%;
     }
 }
