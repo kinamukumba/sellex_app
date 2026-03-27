@@ -274,9 +274,9 @@
 
     .section-hero-container .hero-context {
         .hero-title {
-            width: 90%;
+            width: 100%;
             font-size: 40px;
-            padding: 0 5%;
+            padding: 0;
 
             span {
                 font-size: 40px;
