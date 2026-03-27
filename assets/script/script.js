@@ -117,18 +117,18 @@ const validateStep = (index) => {
 
   // 1) Nome completo
   if (index === 0) {
-    const nameInput = panel.querySelector('input[placeholder*="Nome"]');
-    if (!getValue(nameInput) || getValue(nameInput).length < 3) {
-      createError('Por favor, preencha o seu nome completo (mínimo 3 caracteres).');
+    const emailInput = panel.querySelector('input[type="email"]');
+    if (!isValidEmail(getValue(emailInput))) {
+      createError('Por favor, informe um e-mail válido.');
       return false;
     }
   }
 
   // 2) Email
   if (index === 1) {
-    const emailInput = panel.querySelector('input[type="email"]');
-    if (!isValidEmail(getValue(emailInput))) {
-      createError('Por favor, informe um e-mail válido.');
+    const nameInput = panel.querySelector('input[placeholder*="Nome"]');
+    if (!getValue(nameInput) || getValue(nameInput).length < 3) {
+      createError('Por favor, preencha o seu nome completo (mínimo 3 caracteres).');
       return false;
     }
   }
@@ -214,6 +214,17 @@ const closeBookingModal = () => {
 // Open modal
 openDemoButtons.forEach((btn) => {
   btn.addEventListener('click', openBookingModal);
+});
+
+//Open modal with quick email input
+document.querySelector('.book-demo').addEventListener('click', () => {
+  const emailInputQuick = document.querySelector('.input-email-book .input input[type="email"]');
+  if (!isValidEmail(getValue(emailInputQuick))) {
+    createError('Por favor, informe um e-mail válido para agendar a demo.');
+    return false;
+  }
+  openBookingModal();
+  document.querySelector('.step-book-demo>:nth-child(1) input[type="email"]').value = getValue(emailInputQuick);
 });
 
 // Close modal

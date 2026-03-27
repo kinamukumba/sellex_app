@@ -100,13 +100,6 @@ button:hover {
     z-index: 2000;
 }
 
-input,
-select,
-textarea {
-    touch-action: manipulation;
-    font-size: 16px;
-}
-
 /* Typewriter effect for hero title */
 .typewriter {
     display: inline-block;
