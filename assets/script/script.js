@@ -48,7 +48,7 @@ const getBookingPayload = () => {
   };
 };
 
-const BOOK_DEMO_API = 'https://api.fiji.org.ao/demo_book.php';
+const BOOK_DEMO_API = 'https://api.fiji.org.ao/book_demo.php';
 const API_KEY = 'SELLEX_2026_SECRET';
 
 const sendBookDemo = async () => {
