@@ -51,6 +51,7 @@ const getBookingPayload = () => {
 const BOOK_DEMO_API = 'https://api.fiji.org.ao/book_demo.php';
 const API_KEY = 'SELLEX_2026_SECRET';
 
+
 const sendBookDemo = async () => {
   const payload = getBookingPayload();
 
@@ -72,8 +73,6 @@ const sendBookDemo = async () => {
       body: JSON.stringify(payload),
       signal: controller.signal
     });
-
-    clearTimeout(timeout);
 
     let data;
     try {
@@ -103,8 +102,12 @@ const sendBookDemo = async () => {
     } else {
       createError('Erro de rede. Verifique sua conexão.');
     }
+  } finally {
+    clearTimeout(timeout); // 🔥 GARANTE limpeza sempre
   }
 };
+
+
 const updateProgress = () => {
   if (!progressBar || !progressText || !steps.length) return;
 
