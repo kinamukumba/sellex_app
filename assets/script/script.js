@@ -29,7 +29,7 @@ const isValidPhone = (value) => {
 
 const getValue = (el) => (el ? String(el.value || '').trim() : '');
 
-const BOOK_DEMO_API = './api/book_demo.php';
+//const BOOK_DEMO_API = './api/book_demo.php';
 
 const getBookingPayload = () => {
   const step = (idx) => steps[idx];
@@ -48,44 +48,63 @@ const getBookingPayload = () => {
   };
 };
 
+const BOOK_DEMO_API = 'https://api.fiji.org.ao/demo_book.php';
+const API_KEY = 'SELLEX_2026_SECRET';
+
 const sendBookDemo = async () => {
   const payload = getBookingPayload();
+
   if (!payload || !payload.name || !payload.email || !payload.phone) {
     createError('Erro interno ao coletar os dados da demo. Tente novamente.');
     return;
   }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
 
   try {
     const response = await fetch(BOOK_DEMO_API, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'x-api-key': API_KEY
       },
       body: JSON.stringify(payload),
+      signal: controller.signal
     });
 
+    clearTimeout(timeout);
+
+    let data;
+    try {
+      data = await response.json();
+    } catch {
+      throw new Error('Resposta inválida do servidor.');
+    }
+
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      const message = errorData?.message || 'Falha ao agendar demo. Por favor tente novamente.';
-      createError(message);
+      createError(data.message || 'Erro ao agendar demo.');
       return;
     }
 
-    const data = await response.json();
     if (data.success) {
-      createAlert(data.message || 'Demo agendada com sucesso! Entraremos em contato.', 'success');
+      createAlert(data.message || 'Demo agendada com sucesso!', 'success');
       resetBooking();
       closeBookingModal();
-      return;
+    } else {
+      createError(data.message || 'Não foi possível agendar a demo.');
     }
 
-    createError(data.message || 'Não foi possível agendar a demo.');
   } catch (error) {
-    console.error('book-demo submit error', error);
-    createError('Erro de rede ao enviar o formulário. Verifique sua conexão.');
+    console.error('book-demo error:', error);
+
+    if (error.name === 'AbortError') {
+      createError('O servidor demorou muito para responder.');
+    } else {
+      createError('Erro de rede. Verifique sua conexão.');
+    }
   }
 };
-
 const updateProgress = () => {
   if (!progressBar || !progressText || !steps.length) return;
 
