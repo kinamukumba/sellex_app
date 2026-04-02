@@ -36,8 +36,8 @@ const getBookingPayload = () => {
   if (!step) return null;
 
   return {
-    name: getValue(step(0)?.querySelector('input')),
-    email: getValue(step(1)?.querySelector('input[type="email"]')),
+    name: getValue(step(0)?.querySelector('input[type="email"]')),
+    email: getValue(step(1)?.querySelector('input')),
     phone: getValue(step(2)?.querySelector('input')),
     business_type: getValue(step(3)?.querySelector('select')),
     order_management: getValue(step(4)?.querySelector('select')),
