@@ -1,6 +1,6 @@
 const starsContainer = document.querySelector(".stars");
 
-const starsCount = 150;
+const starsCount = 250;
 
 function createStars(){
 
@@ -9,7 +9,7 @@ function createStars(){
         const star = document.createElement("div");
         star.className="particle-star";
 
-        const size=Math.random()*2.5+0.5;
+        const size=Math.random()*0.5+0.5;
         const isRed=Math.random()>0.85;
         const speed=15+Math.random()*50;
         const startX=Math.random()*100;
@@ -20,11 +20,11 @@ function createStars(){
         star.style.cssText=`
         width:${size}px;
         height:${size}px;
-        background:${isRed?"rgba(197,34,34,0.9)":"white"};
+        background:${isRed?"rgba(248, 248, 248, 0.9)":"white"};
         top:${startY}%;
         left:${startX}%;
         opacity:${opacity};
-        box-shadow:0 0 ${size*2}px ${isRed?"rgba(197,34,34,0.6)":"rgba(255,255,255,0.5)"};
+        box-shadow:0 0 ${size*2}px ${isRed?"rgba(255, 255, 255, 0.6)":"rgba(255,255,255,0.5)"};
         animation: moveParticle ${speed}s linear infinite,
                    twinkleParticle ${2+Math.random()*3}s ease-in-out infinite;
         animation-delay:${delay}s, ${Math.random()*2}s;

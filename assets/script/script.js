@@ -48,7 +48,7 @@ const getBookingPayload = () => {
   };
 };
 
-const BOOK_DEMO_API = 'https://api.fiji.org.ao/book_demo.php';
+const BOOK_DEMO_API = 'https://api.at-investimentos.ao/api/book_demo.php';
 const API_KEY = 'SELLEX_2026_SECRET';
 
 

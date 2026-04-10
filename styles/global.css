@@ -276,7 +276,7 @@ body .body-container {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 2%;
+        padding: 8px 2%;
         border-radius: 30px;
         backdrop-filter: blur(20px);
         background-color: rgba(128, 128, 128, 0.091)

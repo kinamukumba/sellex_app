@@ -43,8 +43,8 @@ set_exception_handler(function (Throwable $e) {
 });
 
 // ── 5. Headers CORS e Content-Type
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Origin: *'); // Mude o * para o domínio do Vercel caso queira mais segurança (ex: https://seu-frontend.vercel.app)
+header('Access-Control-Allow-Headers: Content-Type, x-api-key');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Content-Type: application/json; charset=utf-8');
 
@@ -63,6 +63,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // ── 8. Carregar dependências (config + PDO)
 require_once __DIR__ . '/db.php';
+
+// ── 8.5 Verificar a Segurança da API (Validação do x-api-key)
+$providedApiKey = $_SERVER['HTTP_X_API_KEY'] ?? '';
+if ($providedApiKey !== API_KEY) {
+    http_response_code(401);
+    echo json_encode(['success' => false, 'message' => 'Acesso Negado: Chave da API inválida ou ausente.']);
+    exit;
+}
 
 // ── 9. Ler e validar o body JSON
 $rawBody = file_get_contents('php://input');

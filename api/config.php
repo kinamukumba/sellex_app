@@ -27,3 +27,6 @@ define('DB_CHARSET', $env['DB_CHARSET'] ?? 'utf8mb4');
 define('MAIL_FROM_NAME',  $env['MAIL_FROM_NAME']  ?? 'Sellex');
 define('MAIL_FROM_EMAIL', $env['MAIL_FROM_EMAIL']  ?? 'kinamukumba@gmail.com');
 define('WHATSAPP_URL',    $env['WHATSAPP_URL']     ?? '');
+
+// Segurança (API Key)
+define('API_KEY',         $env['API_KEY']          ?? 'SELLEX_2026_SECRET');
