@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sellex</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/img/favicon/Sellexsimbolo2.png">
+    
+    <!-- Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo sellex-imgs">
+                <img src="../../assets/img/logo/headerlogosellex.png" alt="Sellex Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active"><i class="ri-dashboard-line"></i> Visão Geral</a>
+                <!-- Future links could go here -->
+                <div style="flex-grow: 1;"></div>
+                <a href="../../index.html" class="back-link"><i class="ri-arrow-left-line"></i> Painel Principal</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="animate__animated animate__fadeInDown">
+                <div>
+                    <h1>Painel Administrativo</h1>
+                    <p>Overview dos leads captados e agendamentos de Demo na Sellex.</p>
+                </div>
+            </header>
+
+            <div id="error-alert" class="error-alert" style="display: none;"></div>
+
+            <!-- Top Cards -->
+            <div class="metrics-grid animate__animated animate__fadeInUp">
+                <div class="metric-card glassmorphism">
+                    <div class="icon-wrap"><i class="ri-group-line"></i></div>
+                    <div class="info">
+                        <h3>Total de Demonstrações</h3>
+                        <h2 id="kpi-total">Carregando...</h2>
+                    </div>
+                </div>
+                
+                <div class="metric-card glassmorphism">
+                    <div class="icon-wrap" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;"><i class="ri-store-2-line"></i></div>
+                    <div class="info">
+                        <h3>Líder de Negócios</h3>
+                        <h2 id="kpi-top-business">...</h2>
+                    </div>
+                </div>
+
+                <div class="metric-card glassmorphism">
+                    <div class="icon-wrap" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;"><i class="ri-bar-chart-grouped-line"></i></div>
+                    <div class="info">
+                        <h3>Top Volume Pedidos</h3>
+                        <h2 id="kpi-top-volume">...</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Content -->
+            <div class="content-grid">
+                <div class="stats-col animate__animated animate__zoomIn">
+                    <div class="bussiness-stats glassmorphism">
+                        <h2>Agrupado por Negócio</h2>
+                        <div id="biz-list" class="stat-list">
+                           <!-- Injected JS -->
+                           <p class="loading-state">A carregar...</p>
+                        </div>
+                    </div>
+
+                    <div class="bussiness-stats glassmorphism" style="margin-top: 1.5rem;">
+                        <h2>Receita / Volume de Encomendas</h2>
+                        <div id="volume-list" class="stat-list">
+                           <!-- Injected JS -->
+                           <p class="loading-state">A carregar...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="challenges-board glassmorphism animate__animated animate__fadeInRight">
+                    <div class="head-title">
+                        <h2><i class="ri-chat-voice-line"></i> Últimos Problemas Declarados</h2>
+                        <span class="badge-count" id="count-challenges">0</span>
+                    </div>
+                    <div class="challenges-list" id="challenges-list">
+                        <!-- Injected JS -->
+                        <p class="loading-state">Procurando informações recentes...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Application -->
+    <script src="./dashboard.js"></script>
+</body>
+</html>
