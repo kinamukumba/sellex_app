@@ -240,15 +240,15 @@ function buildWelcomeEmailHtml(string $firstName, string $whatsappUrl, string $d
     .card{max-width:560px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.07)}
     .hdr{background:#0A0A0A;padding:28px 40px;text-align:center}
     .logo{font-size:22px;font-weight:700;letter-spacing:-.5px;color:#fff;text-decoration:none}
-    .logo-accent{color:#22C55E}
+    .logo-accent{color:#FF6016}
     .badge{display:inline-block;margin-top:8px;font-size:11px;color:#71717A;letter-spacing:.5px;text-transform:uppercase}
     .hero{background:linear-gradient(135deg,#0A0A0A,#18181B);padding:48px 40px 40px;text-align:center}
-    .check{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:#22C55E;border-radius:50%;margin-bottom:20px}
+    .check{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:#FF6016;border-radius:50%;margin-bottom:20px}
     .hero h1{font-size:26px;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.5px}
-    .hero-accent{color:#22C55E}
+    .hero-accent{color:#FF6016}
     .hero p{margin-top:14px;font-size:15px;line-height:1.65;color:#A1A1AA}
     .body{padding:40px 40px 32px}
-    .section-label{display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#22C55E;margin-bottom:8px}
+    .section-label{display:block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#FF6016;margin-bottom:8px}
     .body h2{font-size:18px;font-weight:700;color:#18181B;letter-spacing:-.3px;margin-bottom:10px}
     .body p{font-size:14px;line-height:1.7;color:#52525B}
     .cta-block{margin-top:28px;background:#F4F4F5;border-radius:12px;padding:24px;text-align:center}
@@ -264,7 +264,7 @@ function buildWelcomeEmailHtml(string $firstName, string $whatsappUrl, string $d
   <div class="card">
 
     <div class="hdr">
-      <span class="logo">Sell<span class="logo-accent">ex</span></span><br/>
+      <span class="logo"><img src="https://sellex-app.vercel.app/assets/img/logo/headerlogosellex.png" alt="logo_sellex_" width="100" style="display:inline-block;"></span><br/>
       <span class="badge">{$date}</span>
     </div>
 
