@@ -33,7 +33,7 @@ function createAlert(sms, type, icon, duration = 5000) {
 
         // Configuração conforme o type
         let defaultTitle = 'Notificação';
-        let typeColor = '#3b82f6'; // Azul padrão (Info)
+        let typeColor = '#FF6016'; // Azul padrão (Info)
 
         if (type === 'error') {
             icon = icon || 'ri-error-warning-fill';
@@ -164,7 +164,7 @@ style.innerHTML = `
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 :root {
-    --bg-overlay: rgba(15, 23, 42, 0.4);
+    --bg-overlay: rgba(34, 34, 34, 0.4);
     --alert-bg: #ffffff;
     --alert-text: #1e293b;
     --alert-desc: #64748b;
@@ -291,7 +291,7 @@ body.dark-mode .alert-close-btn:hover {
     bottom: 0;
     left: 0;
     height: 4px; /* Barra de progresso para denotar o tempo restante */
-    background-color: #3b82f6; 
+    background-color: #FF6016; 
     animation: alert-progress-shrink linear forwards;
     transform-origin: left;
     opacity: 0.8;
@@ -345,7 +345,7 @@ body.dark-mode .alert-close-btn:hover {
     width: 44px;
     height: 44px;
     border: 4px solid rgba(0,0,0,0.05);
-    border-top: 4px solid #3b82f6;
+    border-top: 4px solid #FF6016;
     border-radius: 50%;
     animation: spin-premium 0.8s cubic-bezier(0.6, 0.2, 0.4, 0.8) infinite;
 }
@@ -353,7 +353,7 @@ body.dark-mode .alert-close-btn:hover {
 [data-theme="dark"] .alert-spinner,
 body.dark-mode .alert-spinner {
     border-color: rgba(255,255,255,0.05);
-    border-top-color: #3b82f6;
+    border-top-color: #FF6016;
 }
 
 @keyframes spin-premium {
