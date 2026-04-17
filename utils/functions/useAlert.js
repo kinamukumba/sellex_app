@@ -304,10 +304,16 @@ body.dark-mode .alert-close-btn:hover {
 
 @media(max-width: 480px) {
     .alert-container {
-        right: 16px;
-        left: 16px;
+        right: 2%;
         bottom: 16px;
-        max-width: calc(100% - 32px);
+        width: 95%;
+        max-width: 95%;
+        padding: 0 16px;
+        box-sizing: border-box;
+        align-items: center; 
+    }
+    .premium-alert {
+        width: 100%;
     }
 }
 
