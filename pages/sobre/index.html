@@ -617,9 +617,32 @@
 
     <!-- SCRIPT DE COUNTDOWN ANIMADO QUANDO CHEGA À SECTION DOS NÚMEROS -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", async () => {
             const counters = document.querySelectorAll('.count-up');
             const speed = 150; // Ajusta este valor para a barra correr mais suave ou brusca
+
+            // Requisição silenciosa à API de estatísticas para não depender do dashboard.js e evitar conflitos globais de variáveis
+            const numDemoElement = document.querySelector('.numDemo');
+            if (numDemoElement) {
+                try {
+                    // Nós podemos utilizar diretamente a API_KEY global do script.js
+                    // Mas enviamos o valor da chave caso o script.js mude de escopo no futuro
+                    const res = await fetch('https://api.at-investimentos.ao/api/dashboard_stats.php', {
+                        headers: { 'x-api-key': typeof API_KEY !== 'undefined' ? API_KEY : 'SELLEX_2026_SECRET' }
+                    });
+                    const json = await res.json();
+                    if (json.success && json.data && json.data.total_demos) {
+                        // Atribui o número real do banco antes de iniciar a animação
+                        numDemoElement.setAttribute('data-target', json.data.total_demos);
+                    } else {
+                        // Valor estético de segurança ('fallback')
+                        numDemoElement.setAttribute('data-target', '4850');
+                    }
+                } catch (err) {
+                    console.error("Erro interno ao buscar número de pessoas na lista:", err);
+                    numDemoElement.setAttribute('data-target', '4850');
+                }
+            }
 
             const animateCounters = (counter) => {
                 const target = +counter.getAttribute('data-target');
@@ -672,7 +695,6 @@
     <script src="../../utils/functions/useStepForm.js"></script>
     <script src="../../utils/functions/useScrollSpy.js"></script>
     <script src="../../assets/script/script.js"></script>
-    <script src="../dashboard/dashboard.js"></script>
 </body>
 
 </html>
