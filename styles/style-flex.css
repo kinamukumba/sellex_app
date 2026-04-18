@@ -480,6 +480,7 @@
     .footer::before {
         background-position: center 140%;
         background-size: 110%;
+        opacity: 0.1;
     }
 
     .nav-footer {
