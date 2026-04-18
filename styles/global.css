@@ -435,15 +435,16 @@ body .body-container {
 
 
     .tags {
-        max-width: 220px;
-        padding: 5px 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 20px;
-        opacity: .9;
-        background-color: var(--sellex_prim);
-        border: solid 1px var(--sellex_main);
+        color: #FF6016;
+        background: rgba(255, 96, 22, 0.1);
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 28px;
+        border: 1px solid rgba(255, 96, 22, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
 
         p {
             font-size: 12px;
