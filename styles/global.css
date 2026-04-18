@@ -783,7 +783,7 @@ body .body-container {
     }
 
     .context {
-        width: 96%;
+        max-width: 96%;
         max-height: 260px;
         height: auto;
         padding: 20px;
