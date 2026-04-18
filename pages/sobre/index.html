@@ -3,58 +3,24 @@
 
 <head>
     <!-- Primary Meta Tags -->
-    <title>Sellex — Plataforma Inteligente para Gestão de Vendas e Negócios</title>
-    <meta name="title" content="Sellex — Plataforma Inteligente para Gestão de Vendas e Negócios">
+    <title>Inovação Sellex — A Nossa Visão</title>
+    <meta name="title" content="Inovação Sellex — A Nossa Visão">
     <meta name="description"
-        content="A Sellex é uma plataforma que ajuda negócios a organizar vendas, pedidos, clientes e atendimentos em um único sistema simples e inteligente.">
+        content="Conheça a arquitetura moral e a história inovadora por trás do sucesso da Sellex no mercado nacional.">
 
     <!-- SEO -->
-    <meta name="keywords"
-        content="gestão de vendas, plataforma de vendas, sistema para negócios, gestão de pedidos, software para restaurantes, sistema para barbearias, catálogo digital, gestão de clientes, vendas online, Sellex">
+    <meta name="keywords" content="sellex, startup inovadora, software de negócios, sobre a nossa empresa">
     <meta name="author" content="CodeOne">
     <meta name="robots" content="index, follow">
     <meta name="language" content="pt">
-    <meta name="revisit-after" content="7 days">
-
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://sellex.ao">
-
-    <!-- Favicon -->
+    <link rel="canonical" href="https://sellex.ao/pages/sobre/">
     <link rel="icon" type="image/png" href="../../assets/img/favicon/Sellexsimbolo2.png">
-
-    <!-- Theme color -->
     <meta name="theme-color" content="0D0807">
 
-    <!-- Open Graph / Facebook / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sellex.ao/">
-    <meta property="og:title" content="Sellex — Gestão inteligente para o seu negócio">
-    <meta property="og:description"
-        content="Organize vendas, pedidos e clientes em um único dashboard com a Sellex. A plataforma que simplifica a gestão de negócios.">
-    <meta property="og:image" content="../../assets/img/favicon/Sellexsimbolo2.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://sellex.ao/">
-    <meta property="twitter:title" content="Sellex — Gestão inteligente para o seu negócio">
-    <meta property="twitter:description"
-        content="Uma plataforma moderna para gerir vendas, pedidos e clientes em um único lugar.">
-    <meta property="twitter:image" content="../../assets/img/favicon/Sellexsimbolo2.png">
-
-    <!-- Mobile App / PWA -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Sellex">
-
-    <!-- Preconnect (Performance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Charset -->
     <meta charset="UTF-8">
 
     <!--Libraries-->
@@ -66,17 +32,294 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../../styles/global.css">
     <link rel="stylesheet" href="../../styles/style-flex.css">
-    <!--ink rel="stylesheet" href="/styles/fixes.css"-->
 
+    <style>
+        /* ESTILOS EXCLUSIVOS DA PÁGINA SOBRE NÓS (CLEAN DESIGN) */
+        body {
+            background-color: #000000;
+        }
+
+        .sobre-hero {
+            position: relative;
+            padding: 70px 4% 90px 4%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .sobre-hero .badge {
+            color: #FF6016;
+            background: rgba(255, 96, 22, 0.1);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 28px;
+            border: 1px solid rgba(255, 96, 22, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .sobre-title {
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            color: #fff;
+            max-width: 850px;
+            letter-spacing: -1px;
+        }
+
+        .sobre-subtitle {
+            font-size: clamp(16px, 2vw, 19px);
+            color: #9CA3AF;
+            max-width: 580px;
+            line-height: 1.6;
+            margin: 0 auto;
+        }
+
+        .about-split-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 110px 10%;
+            gap: 60px;
+        }
+
+        .about-split-content {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .about-split-content h2 {
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+            position: relative;
+            letter-spacing: -0.5px;
+        }
+
+        .about-split-content p {
+            color: #9CA3AF;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-split-image {
+            flex: 1;
+            min-width: 320px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-split-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-split-image .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: #FF6016;
+            filter: blur(90px);
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        /* VARIANTE INVERTIDA P/ A ESQUERDA */
+        .about-split-section.inverted {
+            flex-direction: row-reverse;
+        }
+
+        /* SECTION DE NÚMEROS (CONTADOR DINÂMICO) */
+        .sobre-stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            padding: 100px 10%;
+            text-align: center;
+
+            /* Ligeiramente mais escuro para destaque */
+        }
+
+        .stat-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-box .stat-number-wrapper {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-box .stat-number-wrapper .count-up {
+            color: #fff;
+            display: inline-block;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+        .stat-box .stat-number-wrapper span.suffix {
+            color: #FF6016;
+            margin-left: 2px;
+        }
+
+        .stat-box .stat-label {
+            color: #9CA3AF;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            font-size: 14px;
+        }
+
+        /* GREDIENTE E COMPONENTES MODERNOS (Cultura) */
+        .sobre-grid-culture {
+            padding: 110px 10%;
+        }
+
+        .sobre-grid-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .sobre-grid-header h2 {
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+
+        .sobre-grid-header p {
+            color: #9CA3AF;
+            margin-top: 15px;
+            font-size: 17px;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .culture-card {
+            padding: 45px 30px;
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(80, 80, 80, 0.091);
+            border-radius: 10px;
+            border: solid 1px rgba(192, 192, 192, 0.28);
+        }
+
+        .culture-icon {
+            max-width: 50px;
+            max-height: 50px;
+            min-width: 50px;
+            min-height: 50px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ff60163a;
+
+            i {
+                font-size: 20px;
+                color: var(--sellex_main);
+            }
+        }
+
+        .culture-card h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-top: 10px;
+        }
+
+        .culture-card p {
+            color: #9CA3AF;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* RESPONSIVIDADE PRECISA */
+        @media(max-width: 800px) {
+            .sobre-hero {
+                padding: 0px 4% 90px 4%;
+                margin-top: -15%;
+            }
+
+            .about-split-section,
+            .about-split-section.inverted {
+                flex-direction: column;
+                padding: 70px 5%;
+                gap: 50px;
+            }
+
+            .about-split-content h2 {
+                text-align: center;
+            }
+
+            .sobre-stats-bar {
+                padding: 70px 5%;
+                gap: 50px;
+            }
+
+            .sobre-grid-culture {
+                padding: 80px 5%;
+            }
+
+            .stat-box .stat-number-wrapper {
+                font-size: 58px;
+            }
+
+            .sobre-hero {
+                padding-top: 140px;
+                padding-bottom: 60px;
+            }
+
+            .sobre-title {
+                font-size: 30px;
+            }
+
+            .about-split-content h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="mask"></div>
     <div class="body-container">
+
         <header class="header">
             <div class="header-container">
-                <a href="#" class="sellex-logo sellex-imgs">
+                <a href="../../" class="sellex-logo sellex-imgs">
                     <img src="../../assets/img/logo/headerlogosellex.png" alt="sellex-logo">
                 </a>
                 <nav class="nav-container">
@@ -93,6 +336,7 @@
                 </div>
             </div>
         </header>
+
         <div class="menu">
             <nav class="nav-container">
                 <ul class="list-nav">
@@ -104,9 +348,131 @@
                 <button class="btn-book-demo">Agendar Demo</button>
             </nav>
         </div>
+
         <main class="main">
+            <div class="space-background">
+                <div class="stars"></div>
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+
+                <section class="sobre-hero wow animate__animated animate__fadeIn">
+                    <div class="badge">Nossa Identidade</div>
+                    <h1 class="sobre-title">
+                        Projetados para simplificar negócios pelo poder da tecnologia.
+                    </h1>
+                    <p class="sobre-subtitle">
+                        Nós resgatamos a liberdade dos pequenos empresários eliminando o trabalho manual caótico na hora
+                        de atender e faturar.
+                    </p>
+                </section>
+            </div>
+
+            <section class="about-split-section wow animate__animated animate__fadeInUp">
+                <div class="about-split-content">
+                    <h2>Nascemos de uma frustração estrutural</h2>
+                    <p>
+                        Começamos por testemunhar os verdadeiros guerreiros da nossa economia — lojistas, cabeleireiros,
+                        e restaurantes — enterrados em cadernos e blocos de notas enquanto perdiam pedidos vitais
+                        através do caos que era as suas conversas do WhatsApp.
+                    </p>
+                    <p>
+                        A Sellex foi desenhada exatamente como o elo de conexão em falta no mercado, orquestrando um
+                        ambiente seguro, responsivo e imediato, para que qualquer pessoa possa alavancar a presença de
+                        negócio sem necessitar de deter aptidões de programação.
+                    </p>
+                </div>
+                <div class="about-split-image wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
+                    <div class="glow"></div>
+                    <img src="../../assets/img/Sellesx-Illustration-2.png" alt="A tecnologia da Sellex">
+                </div>
+            </section>
+            <section class="sobre-stats-bar">
+                <div class="stat-box wow animate__animated animate__fadeInUp" data-wow-delay="0s">
+                    <div class="stat-number-wrapper">
+                        <span class="count-up" data-target="32">0</span>
+                        <span class="suffix">+</span>
+                    </div>
+                    <div class="stat-label">Negócios C/ Acesso Antecipado</div>
+                </div>
+
+                <div class="stat-box wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                    <div class="stat-number-wrapper">
+                        <span class="count-up" data-target="40">0</span>
+                        <span class="suffix">+</span>
+                    </div>
+                    <div class="stat-label">Pessoas na Lista de Demo</div>
+                </div>
+
+                <div class="stat-box wow animate__animated animate__fadeInUp" data-wow-delay="0.4s">
+                    <div class="stat-number-wrapper">
+                        <span class="count-up" data-target="92">0</span>
+                        <span class="suffix">%</span>
+                    </div>
+                    <div class="stat-label">Satisfação no Sucesso Logístico</div>
+                </div>
+            </section>
+
+            <section class="about-split-section inverted wow animate__animated animate__fadeInUp">
+                <div class="about-split-content">
+                    <h2>Não fornecemos apenas a infraestrutura</h2>
+                    <p>
+                        Construir uma ferramenta funcional já não é suficientemente impressionante. O nosso trabalho
+                        baseia-se em dotar ferramentas de Inteligência Artificial para operar ativamente a favor das
+                        empresas locais, economizando imensas e incansáveis horas de digitação no atendimento para
+                        responder sobre um catálogo visual.
+                    </p>
+                    <p>
+                        A Sellex fornece a inteligência capaz de processar conversações por forma a libertar o
+                        microempresário de burocracias, focando inteiramente os seus esforços sobre o futuro da sua
+                        marca.
+                    </p>
+                </div>
+                <div class="about-split-image wow animate__animated animate__zoomIn" data-wow-delay="0.2s">
+                    <div class="glow"></div>
+                    <img src="../../assets/img/app.png" alt="Plataforma Integrada da Sellex">
+                </div>
+            </section>
+
+            <!-- VALORES E CULTURA -->
+            <section class="sobre-grid-culture">
+                <div class="sobre-grid-header wow animate__animated animate__fadeInUp">
+                    <h2>Os nossos pilares corporativos</h2>
+                    <p>O manifesto subjacente à codificação de cada funcionalidade lançada na plataforma.</p>
+                </div>
+
+                <div class="culture-grid">
+                    <div class="culture-card wow animate__animated animate__fadeInUp" data-wow-delay="0.1s">
+                        <div class="culture-icon">
+                            <i class="ri-lightbulb-flash-line"></i>
+                        </div>
+                        <h3>Criatividade Acessível</h3>
+                        <p>Desmistificamos o termo tecnológico com UI simples. Inteligência Artificial deve atuar de
+                            fundo sem dar dores de cabeça a utilizadores comuns.</p>
+                    </div>
+
+                    <div class="culture-card wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
+                        <div class="culture-icon">
+                            <i class="ri-shake-hands-line"></i>
+                        </div>
+                        <h3>Sucesso Comprometido</h3>
+                        <p>Encaramos a falha operacional da interface do seu negócio como nossa fraqueza. Só ganhamos e
+                            crescemos substancialmente se transacionar com fluidez.</p>
+                    </div>
+
+                    <div class="culture-card wow animate__animated animate__fadeInUp" data-wow-delay="0.3s">
+                        <div class="culture-icon">
+                            <i class="ri-shield-star-line"></i>
+                        </div>
+                        <h3>Padrão Militar B2B</h3>
+                        <p>O catálogo que criar e a integridade comportamental dos clientes registados no núcleo
+                            pertencem exclusivamente ao seu espólio sob proteção reforçada nossa.</p>
+                    </div>
+                </div>
+            </section>
 
         </main>
+
+        <!-- FOOTER INTÁCTO -->
         <footer class="footer">
             <div class="text-footer">
                 <p>A Sellex é uma plataforma tecnológica desenvolvida para auxiliar negócios na organização e gestão das
@@ -116,21 +482,22 @@
                     comerciais.
                 </p>
             </div>
-            <h1 class="title-footer">Comece a usar a plataforma hoje</h1>
+            <h1 class="title-footer">Entre na Lista de Demo hoje</h1>
             <nav class="nav-footer">
                 <ul class="list-item">
-                    <li class="item-nav-footer"><a href="../sobre/">Sobre nós</a></li>
-                    <li class="item-nav-footer"><a href="../termo/">Termos de Uso</a></li>
-                    <li class="item-nav-footer"><a href="../privacidade">Política de Privacidade</a></li>
+                    <li class="item-nav-footer"><a href="../../pages/sobre/">Sobre nós</a></li>
+                    <li class="item-nav-footer"><a href="../../pages/termo/">Termos de Uso</a></li>
+                    <li class="item-nav-footer"><a href="../../pages/privacidade/">Política de Privacidade</a></li>
                     <li class="item-nav-footer"><a href="#">Endereço <i class="ri-arrow-right-up-line"></i></a></li>
                     <li class="item-nav-footer"><a href="#">Linkedin <i class="ri-arrow-right-up-line"></i></a></li>
-                    <li class="item-nav-footer"><a href="#">Instagram <i class="ri-arrow-right-up-line"></i></a>
-                    </li>
+                    <li class="item-nav-footer"><a href="https://www.instagram.com/sellex.ao/" target="_blank">Instagram
+                            <i class="ri-arrow-right-up-line"></i></a></li>
                 </ul>
             </nav>
             <p>&copy; 2026 Sellex. Todos os direitos reservados.</p>
         </footer>
     </div>
+
     <div class="container-book">
         <form action="" class="form-book-demo">
             <div class="close">
@@ -142,10 +509,10 @@
             </div>
             <div class="step-book-demo">
                 <div class="step">
-                    <h1 class="title-step">Como devemos chamá-lo?</h1>
+                    <h1 class="title-step">O seu email?</h1>
                     <div class="input">
-                        <i class="ri-user-line"></i>
-                        <input type="text" placeholder="Nome completo">
+                        <i class="ri-record-mail-line"></i>
+                        <input type="email" placeholder="Email principal">
                     </div>
                     <div class="btn-step">
                         <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
@@ -154,10 +521,10 @@
                 </div>
 
                 <div class="step">
-                    <h1 class="title-step">O seu email?</h1>
+                    <h1 class="title-step">Como devemos chamá-lo?</h1>
                     <div class="input">
-                        <i class="ri-record-mail-line"></i>
-                        <input type="email" placeholder="Email principal">
+                        <i class="ri-user-line"></i>
+                        <input type="text" placeholder="Nome completo">
                     </div>
                     <div class="btn-step">
                         <button type="button"><i class="ri-arrow-left-line"></i>Voltar</button>
@@ -248,13 +615,62 @@
         </form>
     </div>
 
-    <script src="./utils/functions/useTypewriter.js"></script>
-    <script src="./utils/libs/useAnimate.js"></script>
-    <script src="./utils/functions/useBcgSpace.js"></script>
-    <script src="./utils/functions/useCheckLink.js"></script>
-    <script src="./utils/functions/useAlert.js"></script>
-    <script src="./utils/functions/useStepForm.js"></script>
-    <script src="./utils/functions/useScrollSpy.js"></script>
+    <!-- SCRIPT DE COUNTDOWN ANIMADO QUANDO CHEGA À SECTION DOS NÚMEROS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll('.count-up');
+            const speed = 150; // Ajusta este valor para a barra correr mais suave ou brusca
+
+            const animateCounters = (counter) => {
+                const target = +counter.getAttribute('data-target');
+
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    // Valor em que salta consoante a velocidade
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 25);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            };
+
+            // Utiliza o Intersection Observer da web API para ativar mal a section entra no ecrã (scroll)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters(entry.target);
+                        observer.unobserve(entry.target); // Impede que repita se ele rolar pra cima
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        });
+    </script>
+
+    <!-- Scripts with correct directory routes -->
+    <script src="../../utils/functions/useTypewriter.js"></script>
+    <script src="../../utils/libs/useAnimate.js"></script>
+    <script src="../../utils/functions/useBcgSpace.js"></script>
+    <script src="../../utils/functions/useCheckLink.js"></script>
+    <script src="../../utils/functions/useAlert.js"></script>
+    <script src="../../utils/functions/useStepForm.js"></script>
+    <script src="../../utils/functions/useScrollSpy.js"></script>
     <script src="../../assets/script/script.js"></script>
 </body>
 

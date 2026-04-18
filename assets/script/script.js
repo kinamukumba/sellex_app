@@ -239,16 +239,17 @@ openDemoButtons.forEach((btn) => {
 });
 
 //Open modal with quick email input
-document.querySelector('.book-demo').addEventListener('click', () => {
-  const emailInputQuick = document.querySelector('.input-email-book .input input[type="email"]');
-  if (!isValidEmail(getValue(emailInputQuick))) {
-    createError('Por favor, informe um e-mail válido para agendar a demo.');
-    return false;
-  }
-  openBookingModal();
-  document.querySelector('.step-book-demo>:nth-child(1) input[type="email"]').value = getValue(emailInputQuick);
-});
-
+if (document.querySelector('.book-demo')) {
+  document.querySelector('.book-demo').addEventListener('click', () => {
+    const emailInputQuick = document.querySelector('.input-email-book .input input[type="email"]');
+    if (!isValidEmail(getValue(emailInputQuick))) {
+      createError('Por favor, informe um e-mail válido para agendar a demo.');
+      return false;
+    }
+    openBookingModal();
+    document.querySelector('.step-book-demo>:nth-child(1) input[type="email"]').value = getValue(emailInputQuick);
+  });
+}
 // Close modal
 const closeIcon = containerBook?.querySelector('.close i');
 closeIcon?.addEventListener('click', closeBookingModal);
