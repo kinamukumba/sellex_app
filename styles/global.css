@@ -7,7 +7,7 @@
     --sellex_wh: #EFECE5;
     --sellex_bcg: #000000;
     --ewqfrw: #18181B;
---wergrg: #0A0A0A;
+    --wergrg: #0A0A0A;
     --sellex_font: 12px;
     --sellex_title: 48px;
 }
@@ -987,7 +987,7 @@ body .body-container {
 
             img {
                 width: auto;
-                height: 100%;
+                height: 300px;
             }
         }
     }
@@ -1099,7 +1099,7 @@ body .body-container {
 
         .img-contact img {
             width: auto;
-            height: 150px;
+            height: 200px;
         }
 
         h1 {
@@ -1618,7 +1618,7 @@ body .body-container {
                 align-items: center;
                 gap: 0.5%;
 
-                a{
+                a {
                     color: var(--sellex_sec);
                 }
             }
