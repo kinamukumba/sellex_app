@@ -16,19 +16,19 @@ async function fetchDashboardData() {
         });
 
         if (!res.ok) {
-            if(res.status === 401) throw new Error("Acesso Negado: A chave da API é inválida ou o endereço está incorreto.");
-            if(res.status === 404) throw new Error("API não encontrada. Garantiste que subiste a nova api 'dashboard_stats.php' para o servidor da AT-Investimento?");
+            if (res.status === 401) throw new Error("Acesso Negado: A chave da API é inválida ou o endereço está incorreto.");
+            if (res.status === 404) throw new Error("API não encontrada. Garantiste que subiste a nova api 'dashboard_stats.php' para o servidor da AT-Investimento?");
             throw new Error(`Erro de rede do servidor. Estado: ${res.status}`);
         }
 
         const json = await res.json();
-        
+
         if (!json.success) {
             throw new Error(json.message || "Falha não especificada ao tentar analisar os dados do servidor.");
         }
 
         populateUI(json.data);
-    } catch(err) {
+    } catch (err) {
         console.error(err);
         showError(err.message);
     }
@@ -51,9 +51,11 @@ function populateUI(data) {
     const kpiTotal = document.getElementById('kpi-total');
     const kpiBiz = document.getElementById('kpi-top-business');
     const kpiVol = document.getElementById('kpi-top-volume');
-    
+
     if (kpiTotal) kpiTotal.innerText = data.total_demos || 0;
-    
+    if (document.querySelector('.numDemo')) {
+        document.querySelector('.numDemo').getAttribute('data-target') = data.total_demos;
+    }
     if (kpiBiz) {
         if (data.by_business_type && data.by_business_type.length > 0) {
             kpiBiz.innerText = data.by_business_type[0].business_type;
@@ -103,14 +105,14 @@ function populateUI(data) {
         const listData = data.recent_challenges || [];
         badge.innerText = listData.length;
         challengesList.innerHTML = '';
-        
-        if(listData.length === 0) {
+
+        if (listData.length === 0) {
             challengesList.innerHTML = '<p class="loading-state">Nenhum contacto / desafio submetido recentemente.</p>';
         } else {
             listData.forEach(item => {
                 // Formatação simples da Data se existir
                 let dateStr = item.submitted_at;
-                
+
                 challengesList.innerHTML += `
                     <div class="challenge-item">
                         <div class="head">
