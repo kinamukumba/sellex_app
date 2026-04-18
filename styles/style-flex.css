@@ -477,10 +477,11 @@
         }
     }
 
-    .footer::before{
-        background-position: center 150%;
+    .footer::before {
+        background-position: center 140%;
         background-size: 110%;
     }
+
     .nav-footer {
         ul {
             width: 100%;
