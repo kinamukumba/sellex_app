@@ -1626,3 +1626,112 @@ body .body-container {
         }
     }
 }
+
+/* WhatsApp Community Step Styles */
+.whatsapp-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.wpp-icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.wpp-icon-bg {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.wpp-icon-bg img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.whatsapp-step .title-step.wpp-greeting {
+    font-size: 24px !important;
+    font-weight: 700;
+    color: var(--sellex_wh) !important;
+    margin-bottom: 25px;
+    text-align: center;
+    padding-top: 0 !important;
+}
+
+.wpp-card {
+    border-radius: 16px;
+    padding: 2.5%;
+    width: 95%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.wpp-card * {
+    background-color: transparent !important;
+}
+
+.wpp-card-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row !important;
+    gap: 8px;
+    color: var(--sellex_wh) !important;
+    font-size: 13px !important;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.wpp-card-header i {
+    color: var(--sellex_wh) !important;
+    font-size: 16px !important;
+}
+
+.wpp-card-title {
+    color: var(--sellex_wh) !important;
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.wpp-card-text {
+    color: var(--sellex_wh) !important;
+    font-size: 14px !important;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.wpp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--sellex_main) !important;
+    color: #ffffff !important;
+    width: 100%;
+    padding: 14px 0 !important;
+    border-radius: 12px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.wpp-btn i {
+    color: #ffffff !important;
+    font-size: 18px !important;
+}

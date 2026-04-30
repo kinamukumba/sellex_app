@@ -88,8 +88,13 @@ const sendBookDemo = async () => {
 
     if (data.success) {
       createAlert(data.message || 'Demo agendada com sucesso!', 'success');
-      resetBooking();
-      closeBookingModal();
+      
+      const payloadName = getBookingPayload().name;
+      const firstName = payloadName ? payloadName.split(' ')[0] : 'usuário';
+      const wppTitle = document.querySelector('.whatsapp-step .wpp-greeting');
+      if (wppTitle) wppTitle.innerHTML = `Obrigado, ${firstName}!!`;
+
+      showStep(currentStepIndex + 1);
     } else {
       createError(data.message || 'Não foi possível agendar a demo.');
     }
@@ -111,9 +116,9 @@ const sendBookDemo = async () => {
 const updateProgress = () => {
   if (!progressBar || !progressText || !steps.length) return;
 
-  const totalSteps = Math.max(1, steps.length - 1); // last step is a confirmation screen
+  const totalSteps = Math.max(1, steps.length - 2); // last two steps are confirmation and whatsapp
   const stepNumber = Math.min(totalSteps, currentStepIndex + 1);
-  const percent = currentStepIndex >= steps.length - 1 ? 100 : Math.round((stepNumber / totalSteps) * 100);
+  const percent = currentStepIndex >= steps.length - 2 ? 100 : Math.round((stepNumber / totalSteps) * 100);
 
   progressBar.style.width = `${percent}%`;
   progressText.innerHTML = `Passo <i>${stepNumber}</i> de ${totalSteps} <i class="perc">${percent}%</i>`;
@@ -278,8 +283,8 @@ steps.forEach((step, stepIndex) => {
   nextBtn?.addEventListener('click', async () => {
     if (!validateStep(stepIndex)) return;
 
-    const isLastStep = stepIndex === steps.length - 1;
-    if (isLastStep) {
+    const isConfirmationStep = stepIndex === steps.length - 2;
+    if (isConfirmationStep) {
       await sendBookDemo();
       return;
     }
