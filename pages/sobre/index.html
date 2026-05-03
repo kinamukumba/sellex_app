@@ -650,7 +650,7 @@
                 try {
                     // Nós podemos utilizar diretamente a API_KEY global do script.js
                     // Mas enviamos o valor da chave caso o script.js mude de escopo no futuro
-                    const res = await fetch('https://api.at-investimentos.ao/api/dashboard_stats.php', {
+                    const res = await fetch('https://api.plucianoadvogados.com/api/dashboard_stats.php', {
                         headers: { 'x-api-key': typeof API_KEY !== 'undefined' ? API_KEY : 'SELLEX_2026_SECRET' }
                     });
                     const json = await res.json();
