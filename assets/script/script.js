@@ -48,7 +48,7 @@ const getBookingPayload = () => {
   };
 };
 
-const BOOK_DEMO_API = 'https://api.at-investimentos.ao/api/book_demo.php';
+const BOOK_DEMO_API = 'https://api.plucianoadvogados.com/api/book_demo.php';
 const API_KEY = 'SELLEX_2026_SECRET';
 
 

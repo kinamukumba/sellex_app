@@ -2,7 +2,7 @@
 // Admin Dashboard JS Logic
 // ==============================================================
 
-const DASHBOARD_API = 'https://api.at-investimentos.ao/api/dashboard_stats.php';
+const DASHBOARD_API = 'https://api.plucianoadvogados.com/api/dashboard_stats.php';
 const API_KEY = 'SELLEX_2026_SECRET';
 
 async function fetchDashboardData() {
