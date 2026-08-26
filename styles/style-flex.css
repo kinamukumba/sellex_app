@@ -356,7 +356,7 @@
                 gap: 0;
 
                 .card-resurse {
-                    margin: 1% 0;
+                    margin: 2% 0;
                 }
             }
 
@@ -446,7 +446,7 @@
             flex-direction: column;
 
             .img-service img {
-                height: 300px;
+                height: 270px;
                 object-fit: cover;
             }
 
