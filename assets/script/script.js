@@ -232,15 +232,20 @@ const openBookingModal = () => {
   resetBooking();
 };
 
+
 const closeBookingModal = () => {
   if (!modalMask || !containerBook) return;
   modalMask.classList.remove('open');
   containerBook.classList.remove('open');
 };
 
+const openApp = () =>{
+  window.location.href = 'https://app.sellex.ao/'
+}
+
 // Open modal
 openDemoButtons.forEach((btn) => {
-  btn.addEventListener('click', openBookingModal);
+  btn.addEventListener('click', openApp);
 });
 
 //Open modal with quick email input
@@ -251,7 +256,7 @@ if (document.querySelector('.book-demo')) {
       createError('Por favor, informe um e-mail válido para agendar a demo.');
       return false;
     }
-    openBookingModal();
+    openApp();
     document.querySelector('.step-book-demo>:nth-child(1) input[type="email"]').value = getValue(emailInputQuick);
   });
 }
