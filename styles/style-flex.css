@@ -282,11 +282,11 @@
     .section-hero-container .hero-context {
         .hero-title {
             width: 100%;
-            font-size: 40px;
+            font-size: 35px;
             padding: 0;
 
             span {
-                font-size: 40px;
+                font-size: 30px;
                 min-height: 55px;
                 max-width: 90%;
             }
