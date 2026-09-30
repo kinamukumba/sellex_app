@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <title>404 — Página Não Encontrada | Sellex</title>
+    <meta name="description"
+        content="Ups, parece que nos perdemos. A página ou loja que procura não foi encontrada na plataforma Sellex." />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Favicon -->
+    <link rel="icon" id="faviconLink" href="/assets/img/favicon/Sellexsimbolo2.png" />
+    <link rel="apple-touch-icon" href="/assets/img/favicon/Sellexsimbolo2.png" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Styles -->
+    <link rel="stylesheet" id="styleGlobal" href="/styles/global.css">
+    <link rel="stylesheet" id="style404" href="/styles/404.css">
+
+    <style>
+        :root {
+            --sellex-black: #000000;
+            --sellex-dark-bg: #060608;
+            --sellex-orange: #FF6016;
+            --sellex-orange-hover: #E5520D;
+            --sellex-orange-glow: rgba(255, 96, 22, 0.28);
+            --sellex-text-white: #FFFFFF;
+            --sellex-text-muted: #8E8F9F;
+        }
+
+        body.page-404-body {
+            background-color: var(--sellex-black) !important;
+            color: var(--sellex-text-white) !important;
+            font-family: 'DM Sans', DMSans, sans-serif !important;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        body.page-404-body .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        /* Top bar: Brand logo on left, Log In pill on right */
+        .stage-topbar {
+            width: 100%;
+            max-width: 1100px;
+            padding: 24px 32px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stage-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .stage-brand:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .stage-brand-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .stage-brand-name {
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--sellex-text-white);
+        }
+
+        .stage-login-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: var(--sellex-text-white);
+            padding: 9px 20px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .stage-login-btn:hover {
+            background: rgba(255, 255, 255, 0.16);
+            border-color: rgba(255, 255, 255, 0.35);
+            transform: translateY(-1px);
+            color: var(--sellex-text-white);
+        }
+
+        /* Center Content Stage */
+        .stage-center {
+            width: 100%;
+            max-width: 860px;
+            margin: auto;
+            padding: 20px 24px 40px 24px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* 404 Composition with Broken Logo in Center */
+        .stage-visual {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            user-select: none;
+        }
+
+        /* Giant 404 Typography behind/framing the logo */
+        .stage-num {
+            position: absolute;
+            font-size: clamp(140px, 28vw, 240px);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -6px;
+            color: rgba(255, 255, 255, 0.08);
+            text-shadow: 0 0 40px rgba(255, 96, 22, 0.08);
+            z-index: 1;
+            pointer-events: none;
+            font-family: 'DM Sans', DMSans, sans-serif;
+        }
+
+        .stage-num-left {
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .stage-num-right {
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Ambient Glow behind broken logo */
+        .stage-glow {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(255, 96, 22, 0.28) 0%, rgba(255, 96, 22, 0.08) 50%, rgba(0, 0, 0, 0) 75%);
+            filter: blur(36px);
+            border-radius: 50%;
+            z-index: 2;
+            pointer-events: none;
+            animation: pulseGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* Broken Logo in Center (Hero Character) */
+        .stage-broken-logo-wrap {
+            position: relative;
+            z-index: 3;
+            width: clamp(180px, 32vw, 250px);
+            height: clamp(180px, 32vw, 250px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 20px 35px rgba(255, 96, 22, 0.35)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7));
+            animation: floatBrokenLogo 5s ease-in-out infinite;
+        }
+
+        @keyframes floatBrokenLogo {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotate(-1.5deg);
+            }
+        }
+
+        .stage-broken-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Copywriting Section */
+        .stage-title {
+            font-size: clamp(24px, 5vw, 36px);
+            font-weight: 800;
+            color: var(--sellex-text-white);
+            margin: 0 0 10px 0;
+            letter-spacing: -0.6px;
+        }
+
+        .stage-subtitle {
+            font-size: clamp(13.5px, 2.5vw, 15px);
+            color: var(--sellex-text-muted);
+            line-height: 1.6;
+            margin: 0 0 28px 0;
+            max-width: 440px;
+        }
+
+        /* Back to Home Button (Pill style with left arrow) */
+        .stage-btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--sellex-text-white);
+            color: #0A0A0E;
+            padding: 13px 28px;
+            border-radius: 999px;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 0 25px rgba(255, 255, 255, 0.12);
+            transition: all 0.25s ease;
+        }
+
+        .stage-btn-home i {
+            font-size: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .stage-btn-home:hover {
+            background: #F3F4F6;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55), 0 0 30px rgba(255, 96, 22, 0.25);
+            color: #000000;
+        }
+
+        .stage-btn-home:hover i {
+            transform: translateX(-3px);
+        }
+
+        /* Secondary Actions Row */
+        .stage-sub-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .stage-sub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--sellex-text-muted);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.2s ease;
+        }
+
+        .stage-sub-link:hover {
+            color: var(--sellex-orange);
+            background: rgba(255, 96, 22, 0.08);
+            border-color: rgba(255, 96, 22, 0.25);
+        }
+
+        .stage-sub-link i {
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .stage-footer {
+            width: 100%;
+            padding: 20px 24px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 11px;
+            color: #475569;
+            letter-spacing: 0.04em;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Responsividade refinada */
+        @media (max-width: 600px) {
+            .stage-topbar {
+                padding: 18px 20px;
+            }
+
+            .stage-visual {
+                height: 250px;
+            }
+
+            .stage-num-left {
+                left: 0;
+            }
+
+            .stage-num-right {
+                right: 0;
+            }
+
+            .stage-broken-logo-wrap {
+                width: 170px;
+                height: 170px;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-404-body space-background">
+    <div class="stars"></div>
+
+    <!-- Center Stage: 4 [Broken Logo] 4, Copywriting & Action -->
+    <main class="stage-center">
+        <div class="stage-visual">
+            <span class="stage-num stage-num-left">4</span>
+            <div class="stage-glow"></div>
+            <div class="stage-broken-logo-wrap">
+                <img id="brokenLogoImg" class="stage-broken-logo sellex-imgs" src="/assets/img/404.png" alt="Sellex 404">
+            </div>
+            <span class="stage-num stage-num-right">4</span>
+        </div>
+
+        <h1 class="stage-title">Ups, parece que nos perdemos</h1>
+        <p class="stage-subtitle">Vamos levá-lo de volta para um caminho seguro e conhecido...</p>
+
+        <a href="/" class="stage-btn-home" id="btnGoHome">
+            <i class="ri-arrow-left-line"></i> Voltar ao início
+        </a>
+    </main>
+
+    <!-- Scripts utilitários -->
+    <script src="/utils/libs/useAnimate.js"></script>
+    <script src="/utils/functions/useBcgSpace.js"></script>
+</body>
+
+</html>

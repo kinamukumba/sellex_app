@@ -1,0 +1,38 @@
+# ==============================================================================
+# SELLEX — Configurações de Servidor Apache (.htaccess)
+# ==============================================================================
+
+# 1. Configuração da Página 404 Personalizada
+ErrorDocument 404 /404.html
+
+# 2. Desabilitar listagem pública de diretórios
+Options -Indexes
+
+# 3. Charset padrão
+AddDefaultCharset UTF-8
+
+# 4. Regras de Reescrita (mod_rewrite)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Permitir acesso direto ao arquivo 404.html sem reescrita
+    RewriteRule ^404\.html$ - [L]
+
+    # Se o arquivo ou diretório solicitado NÃO existir fisicamente
+    # Redirecionar para a página 404 personalizada retornando status HTTP 404
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /404.html [L,R=404]
+</IfModule>
+
+# 5. Proteção de arquivos sensíveis (.env, .sql, .git, etc.)
+<FilesMatch "^\.(htaccess|htpasswd|ini|env|git|log)|(\.sql)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Academia Sellex | Tutoriais, Vídeos e Guias</title>
+    <meta name="title" content="Academia Sellex | Tutoriais, Vídeos e Guias">
+    <meta name="description"
+        content="Domine a integração e o uso da Sellex através de vídeos tutoriais, documentação e exemplos práticos para o seu negócio.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/img/favicon/Sellexsimbolo2.png">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../chat.css">
+</head>
+
+<body>
+
+    <!-- ─────────────────────────────────────────────
+         MOBILE HEADER (Mesmo formato e estilo do index.html)
+         ───────────────────────────────────────────── -->
+    <div class="mobile-header-wrapper">
+        <header class="mobile-header-container">
+            <a href="https://sellex.ao" class="mobile-logo" title="Sellex">
+                <img src="../../assets/img/logo/headerlogosellex.png" alt="Sellex Logo">
+            </a>
+            <button class="mobile-icon-menu" id="mobileMenuBtn" aria-label="Abrir Menu">
+                <i class="ri-menu-line"></i>
+            </button>
+        </header>
+
+        <!-- Dropdown Menu Mobile -->
+        <div class="mobile-dropdown-menu" id="mobileDropdownMenu">
+            <ul class="mobile-dropdown-list">
+                <li class="mobile-dropdown-item">
+                    <a href="../index.html">
+                        <i class="ri-chat-1-line"></i> Chat com Sellex
+                    </a>
+                </li>
+                <li class="mobile-dropdown-item">
+                    <a href="./index.html" class="active">
+                        <i class="ri-graduation-cap-line"></i> Academia & Vídeos
+                    </a>
+                </li>
+                <li class="mobile-dropdown-item">
+                    <a href="https://sellex.ao">
+                        <i class="ri-home-4-line"></i> Página Principal
+                    </a>
+                </li>
+            </ul>
+            <button class="mobile-theme-toggle" id="mobileThemeToggleBtn">
+                <span>Modo Escuro / Claro</span>
+                <i class="ri-moon-line" id="mobileThemeIcon"></i>
+            </button>
+            <a href="https://app.sellex.ao" class="btn-mobile-access" target="_blank" rel="noopener">
+                Acessar Plataforma
+            </a>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         SIDEBAR (Desktop)
+         ───────────────────────────────────────────── -->
+    <aside class="chat-sidebar">
+        <div class="sidebar-top">
+            <a href="https://sellex.ao" class="sidebar-logo" title="Sellex | Página Inicial">
+                <img src="../../assets/img/favicon/Sellexsimbolo2.png" alt="Sellex Logo">
+            </a>
+
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-item" title="Chat com Sellex">
+                    <i class="ri-chat-1-line"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="./index.html" class="nav-item active" title="Sellex Academia & Guias">
+                    <i class="ri-graduation-cap-line"></i>
+                    <span>Academia</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <button class="theme-toggle-btn" id="themeToggleBtn" title="Alternar Modo Escuro / Claro">
+                <i class="ri-moon-line" id="themeIcon"></i>
+                <span id="themeLabel">Modo Escuro</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ─────────────────────────────────────────────
+         MAIN CONTAINER (ACADEMIA / TUTORIAIS)
+         ───────────────────────────────────────────── -->
+    <main class="chat-main-container">
+        <!-- Top Bar Desktop -->
+        <header class="chat-topbar">
+            <div class="topbar-actions">
+                <a href="https://sellex.ao" class="btn-topbar" target="_blank" rel="noopener">
+                    Ir pra plataforma <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- ACADEMIA CONTENT -->
+        <div class="academia-container">
+            <!-- Header Group -->
+            <div class="academia-header">
+                <div class="academia-title-group">
+                    <i class="ri-graduation-cap-line"></i>
+                    <h1 class="academia-title">Academia</h1>
+                </div>
+                <p class="academia-subtitle">
+                    Domine a configuração, integração e vendas na Sellex através de vídeos tutoriais, documentação e exemplos práticos.
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="academia-search-wrapper">
+                <i class="ri-search-line"></i>
+                <input type="text" id="videoSearchInput" class="academia-search-input" placeholder="Pesquisar vídeos, tutoriais, WhatsApp, catálogo, API...">
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="academia-filter-tabs">
+                <button class="filter-tab active" data-category="all">
+                    <i class="ri-layout-grid-fill"></i> Todos
+                </button>
+                <button class="filter-tab" data-category="comecar">
+                    <i class="ri-rocket-line"></i> Primeiros Passos
+                </button>
+                <button class="filter-tab" data-category="vendas">
+                    <i class="ri-store-2-line"></i> Catálogo & Vendas
+                </button>
+                <button class="filter-tab" data-category="whatsapp">
+                    <i class="ri-whatsapp-line"></i> WhatsApp
+                </button>
+                <button class="filter-tab" data-category="code">
+                    <i class="ri-code-s-slash-line"></i> API & Integrações
+                </button>
+                <button class="filter-tab" data-category="conceitos">
+                    <i class="ri-book-open-line"></i> Conceitos & Gestão
+                </button>
+            </div>
+
+            <!-- Video Grid (Sem Imagens - Design em Código / Geométrico) -->
+            <div class="academia-grid" id="academiaVideoGrid">
+                <!-- Video 1 -->
+                <div class="video-card" data-category="comecar" data-title="Como criar e configurar sua loja na Sellex do zero" data-duration="04:20" data-tag="Tutorial Inicial">
+                    <div class="video-thumbnail-box">
+                        <span class="video-topic-tag">Primeiros Passos</span>
+                        <div class="video-play-badge"><i class="ri-play-fill"></i></div>
+                        <span class="video-duration">04:20</span>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Como criar e configurar sua loja na Sellex do zero</h3>
+                        <div class="video-meta">
+                            <i class="ri-verified-badge-fill"></i> Oficial Sellex
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card" data-category="whatsapp" data-title="Como receber e organizar pedidos do WhatsApp automaticamente" data-duration="03:45" data-tag="WhatsApp">
+                    <div class="video-thumbnail-box">
+                        <span class="video-topic-tag">WhatsApp</span>
+                        <div class="video-play-badge"><i class="ri-play-fill"></i></div>
+                        <span class="video-duration">03:45</span>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Como receber e organizar pedidos do WhatsApp automaticamente</h3>
+                        <div class="video-meta">
+                            <i class="ri-verified-badge-fill"></i> Oficial Sellex
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video-card" data-category="vendas" data-title="Cadastrando catálogo digital com preços em Kwanzas e controle de estoque" data-duration="05:10" data-tag="Catálogo Digital">
+                    <div class="video-thumbnail-box">
+                        <span class="video-topic-tag">Catálogo & Estoque</span>
+                        <div class="video-play-badge"><i class="ri-play-fill"></i></div>
+                        <span class="video-duration">05:10</span>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Cadastrando catálogo digital com preços em Kwanzas e controle de estoque</h3>
+                        <div class="video-meta">
+                            <i class="ri-verified-badge-fill"></i> Oficial Sellex
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="video-card" data-category="code" data-title="Como integrar a API da Sellex e Webhooks com JavaScript e Node.js" data-duration="08:15" data-tag="API REST">
+                    <div class="video-thumbnail-box">
+                        <span class="video-topic-tag">Código & API</span>
+                        <div class="video-play-badge"><i class="ri-play-fill"></i></div>
+                        <span class="video-duration">08:15</span>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Como integrar a API da Sellex e Webhooks com JavaScript e Node.js</h3>
+                        <div class="video-meta">
+                            <i class="ri-verified-badge-fill"></i> Oficial Sellex
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="video-card" data-category="conceitos" data-title="Entenda como funciona a comissão de 8% e o modelo de negócio da Sellex" data-duration="03:30" data-tag="Taxas & Finanças">
+                    <div class="video-thumbnail-box">
+                        <span class="video-topic-tag">Taxa de 8%</span>
+                        <div class="video-play-badge"><i class="ri-play-fill"></i></div>
+                        <span class="video-duration">03:30</span>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Entenda como funciona a comissão de 8% e o modelo de negócio da Sellex</h3>
+                        <div class="video-meta">
+                            <i class="ri-verified-badge-fill"></i> Oficial Sellex
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="video-card" data-category="code" data-title="Sincronização de pedidos e inventário com Python e API da Sellex" data-duration="06:40" data-tag="Python SDK">
+                    <div class="video-thumbnail-box">
+                        <span class="video-topic-tag">Python & ERP</span>
+                        <div class="video-play-badge"><i class="ri-play-fill"></i></div>
+                        <span class="video-duration">06:40</span>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Sincronização de pedidos e inventário com Python e API da Sellex</h3>
+                        <div class="video-meta">
+                            <i class="ri-verified-badge-fill"></i> Oficial Sellex
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 7 -->
+                <div class="video-card" data-category="vendas" data-title="Configurando a IA de atendimento para responder clientes 24/7" data-duration="04:55" data-tag="Inteligência Artificial">
+                    <div class="video-thumbnail-box">
+                        <span class="video-topic-tag">IA de Vendas</span>
+                        <div class="video-play-badge"><i class="ri-play-fill"></i></div>
+                        <span class="video-duration">04:55</span>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Configurando a IA de atendimento para responder clientes 24/7</h3>
+                        <div class="video-meta">
+                            <i class="ri-verified-badge-fill"></i> Oficial Sellex
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 8 -->
+                <div class="video-card" data-category="conceitos" data-title="Boas práticas para aumentar conversão no Instagram e TikTok usando o link do catálogo" data-duration="07:20" data-tag="Vendas Sociais">
+                    <div class="video-thumbnail-box">
+                        <span class="video-topic-tag">Redes Sociais</span>
+                        <div class="video-play-badge"><i class="ri-play-fill"></i></div>
+                        <span class="video-duration">07:20</span>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Boas práticas para aumentar conversão no Instagram e TikTok usando o link do catálogo</h3>
+                        <div class="video-meta">
+                            <i class="ri-verified-badge-fill"></i> Oficial Sellex
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ─────────────────────────────────────────────
+         MODAL DO PLAYER DE VÍDEO (Estilo YouTube)
+         ───────────────────────────────────────────── -->
+    <div class="video-modal-backdrop" id="videoModalBackdrop">
+        <div class="video-modal-container" id="videoModalContainer">
+            <!-- Header do Modal -->
+            <div class="video-modal-header">
+                <span class="video-modal-title" id="modalVideoTitle">Título do Vídeo</span>
+                <div class="video-modal-header-actions">
+                    <button class="btn-modal-action" id="btnPipVideo" title="Fixar no ecrã (Picture in Picture / Miniatura)">
+                        <i class="ri-picture-in-picture-2-line"></i>
+                    </button>
+                    <button class="btn-modal-action" id="btnCloseVideo" title="Fechar vídeo">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Custom Video Canvas & Controls -->
+            <div class="custom-player-wrapper" id="customPlayerWrapper">
+                <!-- Canvas de Apresentação de Vídeo -->
+                <div class="player-screen-canvas" id="playerScreenCanvas">
+                    <i class="ri-play-circle-fill canvas-icon" id="centerPlayIcon"></i>
+                    <h2 id="canvasVideoTitle">Como criar e configurar sua loja na Sellex do zero</h2>
+                    <p>Vídeo tutorial interativo da Academia Sellex</p>
+                </div>
+
+                <!-- Barra de Controles Estilo YouTube -->
+                <div class="player-controls-overlay">
+                    <!-- Barra de Progresso / Scrubbing -->
+                    <div class="player-progress-container" id="playerProgressContainer">
+                        <div class="player-progress-bar" id="playerProgressBar"></div>
+                    </div>
+
+                    <div class="player-controls-row">
+                        <div class="player-left-controls">
+                            <!-- Play / Pause -->
+                            <button class="player-ctrl-btn" id="btnPlayPause" title="Reproduzir / Pausar">
+                                <i class="ri-play-fill" id="playIconState"></i>
+                            </button>
+
+                            <!-- Volume / Mute -->
+                            <div class="volume-slider-wrapper">
+                                <button class="player-ctrl-btn" id="btnVolumeToggle" title="Mutar / Ativar Som">
+                                    <i class="ri-volume-up-line" id="volumeIconState"></i>
+                                </button>
+                                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80" title="Aumentar / Diminuir Volume">
+                            </div>
+
+                            <!-- Duração de Tempo -->
+                            <span class="player-time-display" id="playerTimeDisplay">00:45 / 04:20</span>
+                        </div>
+
+                        <div class="player-right-controls">
+                            <!-- Fixar / Pin -->
+                            <button class="player-ctrl-btn" id="btnPinScreen" title="Fixar na tela">
+                                <i class="ri-pushpin-line" id="pinIcon"></i>
+                            </button>
+
+                            <!-- Tela Cheia / Fullscreen -->
+                            <button class="player-ctrl-btn" id="btnFullscreen" title="Ecrã Inteiro">
+                                <i class="ri-fullscreen-line" id="fullscreenIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Filtro, Mobile Menu e Vídeo Player -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tema
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const themeIcon = document.getElementById('themeIcon');
+            const themeLabel = document.getElementById('themeLabel');
+            const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
+            const mobileThemeIcon = document.getElementById('mobileThemeIcon');
+
+            function applyTheme(isLight) {
+                if (isLight) {
+                    document.body.classList.add('light-theme');
+                    if (themeIcon) themeIcon.className = 'ri-sun-line';
+                    if (mobileThemeIcon) mobileThemeIcon.className = 'ri-sun-line';
+                    if (themeLabel) themeLabel.textContent = 'Modo Claro';
+                } else {
+                    document.body.classList.remove('light-theme');
+                    if (themeIcon) themeIcon.className = 'ri-moon-line';
+                    if (mobileThemeIcon) mobileThemeIcon.className = 'ri-moon-line';
+                    if (themeLabel) themeLabel.textContent = 'Modo Escuro';
+                }
+            }
+
+            function initTheme() {
+                const savedTheme = localStorage.getItem('sellex_chat_theme') || 'dark';
+                applyTheme(savedTheme === 'light');
+            }
+
+            function toggleTheme() {
+                const isLight = document.body.classList.toggle('light-theme');
+                localStorage.setItem('sellex_chat_theme', isLight ? 'light' : 'dark');
+                applyTheme(isLight);
+            }
+
+            if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+            if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+            initTheme();
+
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileDropdownMenu = document.getElementById('mobileDropdownMenu');
+
+            if (mobileMenuBtn && mobileDropdownMenu) {
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileDropdownMenu.classList.toggle('open');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!mobileDropdownMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        mobileDropdownMenu.classList.remove('open');
+                    }
+                });
+            }
+
+            // Filtros e Busca de Vídeos
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const searchInput = document.getElementById('videoSearchInput');
+            const cards = document.querySelectorAll('.video-card');
+
+            let currentCategory = 'all';
+            let currentSearch = '';
+
+            function applyFilter() {
+                cards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const cardTitle = card.querySelector('.video-title').textContent.toLowerCase();
+                    
+                    const matchesCategory = (currentCategory === 'all' || cardCategory === currentCategory);
+                    const matchesSearch = (!currentSearch || cardTitle.includes(currentSearch));
+
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    currentCategory = tab.getAttribute('data-category');
+                    applyFilter();
+                });
+            });
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    currentSearch = e.target.value.toLowerCase().trim();
+                    applyFilter();
+                });
+            }
+
+            // ─────────────────────────────────────────────
+            // VIDEO PLAYER MODAL LOGIC (Estilo YouTube)
+            // ─────────────────────────────────────────────
+            const videoModalBackdrop = document.getElementById('videoModalBackdrop');
+            const modalVideoTitle = document.getElementById('modalVideoTitle');
+            const canvasVideoTitle = document.getElementById('canvasVideoTitle');
+            const btnCloseVideo = document.getElementById('btnCloseVideo');
+            const btnPipVideo = document.getElementById('btnPipVideo');
+            const btnPinScreen = document.getElementById('btnPinScreen');
+            const pinIcon = document.getElementById('pinIcon');
+            const btnFullscreen = document.getElementById('btnFullscreen');
+            const fullscreenIcon = document.getElementById('fullscreenIcon');
+            const customPlayerWrapper = document.getElementById('customPlayerWrapper');
+            const btnPlayPause = document.getElementById('btnPlayPause');
+            const playIconState = document.getElementById('playIconState');
+            const centerPlayIcon = document.getElementById('centerPlayIcon');
+            const btnVolumeToggle = document.getElementById('btnVolumeToggle');
+            const volumeIconState = document.getElementById('volumeIconState');
+            const volumeSlider = document.getElementById('volumeSlider');
+            const playerTimeDisplay = document.getElementById('playerTimeDisplay');
+            const playerProgressContainer = document.getElementById('playerProgressContainer');
+            const playerProgressBar = document.getElementById('playerProgressBar');
+
+            let isPlaying = false;
+            let isMuted = false;
+            let isPip = false;
+            let currentSeconds = 0;
+            let totalSeconds = 260; // 04:20
+            let playbackTimer = null;
+
+            function formatTime(sec) {
+                const m = Math.floor(sec / 60);
+                const s = Math.floor(sec % 60);
+                return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            }
+
+            function updateTimeUI() {
+                playerTimeDisplay.textContent = `${formatTime(currentSeconds)} / ${formatTime(totalSeconds)}`;
+                const pct = (currentSeconds / totalSeconds) * 100;
+                playerProgressBar.style.width = `${pct}%`;
+            }
+
+            function togglePlay() {
+                isPlaying = !isPlaying;
+                if (isPlaying) {
+                    playIconState.className = 'ri-pause-fill';
+                    centerPlayIcon.className = 'ri-pause-circle-fill canvas-icon';
+                    playbackTimer = setInterval(() => {
+                        if (currentSeconds < totalSeconds) {
+                            currentSeconds++;
+                            updateTimeUI();
+                        } else {
+                            pausePlayback();
+                        }
+                    }, 1000);
+                } else {
+                    pausePlayback();
+                }
+            }
+
+            function pausePlayback() {
+                isPlaying = false;
+                playIconState.className = 'ri-play-fill';
+                centerPlayIcon.className = 'ri-play-circle-fill canvas-icon';
+                clearInterval(playbackTimer);
+            }
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const title = card.getAttribute('data-title') || card.querySelector('.video-title').textContent;
+                    const durationStr = card.getAttribute('data-duration') || '04:20';
+                    
+                    const parts = durationStr.split(':');
+                    totalSeconds = (parseInt(parts[0], 10) * 60) + parseInt(parts[1], 10);
+                    currentSeconds = 0;
+
+                    modalVideoTitle.textContent = title;
+                    canvasVideoTitle.textContent = title;
+                    updateTimeUI();
+
+                    videoModalBackdrop.classList.add('open');
+                    togglePlay();
+                });
+            });
+
+            function closeVideoModal() {
+                videoModalBackdrop.classList.remove('open');
+                videoModalBackdrop.classList.remove('pip-mode');
+                isPip = false;
+                pausePlayback();
+            }
+
+            if (btnCloseVideo) btnCloseVideo.addEventListener('click', closeVideoModal);
+
+            videoModalBackdrop.addEventListener('click', (e) => {
+                if (e.target === videoModalBackdrop) {
+                    closeVideoModal();
+                }
+            });
+
+            if (btnPlayPause) btnPlayPause.addEventListener('click', togglePlay);
+            if (centerPlayIcon) centerPlayIcon.addEventListener('click', togglePlay);
+
+            // Volume
+            if (volumeSlider) {
+                volumeSlider.addEventListener('input', (e) => {
+                    const val = parseInt(e.target.value, 10);
+                    if (val === 0) {
+                        volumeIconState.className = 'ri-volume-mute-line';
+                        isMuted = true;
+                    } else if (val < 50) {
+                        volumeIconState.className = 'ri-volume-down-line';
+                        isMuted = false;
+                    } else {
+                        volumeIconState.className = 'ri-volume-up-line';
+                        isMuted = false;
+                    }
+                });
+            }
+
+            if (btnVolumeToggle) {
+                btnVolumeToggle.addEventListener('click', () => {
+                    isMuted = !isMuted;
+                    if (isMuted) {
+                        volumeIconState.className = 'ri-volume-mute-line';
+                        volumeSlider.value = 0;
+                    } else {
+                        volumeIconState.className = 'ri-volume-up-line';
+                        volumeSlider.value = 80;
+                    }
+                });
+            }
+
+            // Scrubbing na barra de progresso
+            if (playerProgressContainer) {
+                playerProgressContainer.addEventListener('click', (e) => {
+                    const rect = playerProgressContainer.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const pct = Math.max(0, Math.min(1, clickX / rect.width));
+                    currentSeconds = Math.floor(pct * totalSeconds);
+                    updateTimeUI();
+                });
+            }
+
+            // Fixar no ecrã (Picture-in-picture)
+            function togglePip() {
+                isPip = !isPip;
+                videoModalBackdrop.classList.toggle('pip-mode', isPip);
+                if (pinIcon) {
+                    pinIcon.className = isPip ? 'ri-pushpin-fill' : 'ri-pushpin-line';
+                }
+            }
+
+            if (btnPipVideo) btnPipVideo.addEventListener('click', togglePip);
+            if (btnPinScreen) btnPinScreen.addEventListener('click', togglePip);
+
+            // Fullscreen
+            if (btnFullscreen) {
+                btnFullscreen.addEventListener('click', () => {
+                    if (!document.fullscreenElement) {
+                        if (customPlayerWrapper.requestFullscreen) {
+                            customPlayerWrapper.requestFullscreen();
+                        } else if (customPlayerWrapper.webkitRequestFullscreen) {
+                            customPlayerWrapper.webkitRequestFullscreen();
+                        }
+                        fullscreenIcon.className = 'ri-fullscreen-exit-line';
+                    } else {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        }
+                        fullscreenIcon.className = 'ri-fullscreen-line';
+                    }
+                });
+            }
+
+            document.addEventListener('fullscreenchange', () => {
+                if (!document.fullscreenElement && fullscreenIcon) {
+                    fullscreenIcon.className = 'ri-fullscreen-line';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

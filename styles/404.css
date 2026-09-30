@@ -1,0 +1,657 @@
+/* ─────────────────────────────────────────────
+   SELLEX ONBOARDING - DARK THEME
+   Inspirado no design minimalista de cards com o design system Sellex
+   ───────────────────────────────────────────── */
+
+:root {
+    --ob-bg: #000000;
+    --ob-surface: #0A0A0E;
+    --ob-card-bg: rgba(255, 255, 255, 0.03);
+    --ob-card-hover: rgba(255, 255, 255, 0.06);
+    --ob-border: rgba(255, 255, 255, 0.08);
+    --ob-border-hover: rgba(255, 255, 255, 0.22);
+    --ob-text-main: #FFFFFF;
+    --ob-text-muted: #94A3B8;
+    --ob-primary: #FF6016;
+    --ob-primary-hover: #E5520D;
+    --ob-primary-light: rgba(255, 96, 22, 0.12);
+    --ob-primary-glow: rgba(255, 96, 22, 0.25);
+    --ob-title-highlight: #FF6016;
+}
+
+body.onboarding-page {
+    background-color: var(--ob-bg) !important;
+    color: var(--ob-text-main) !important;
+    font-family: 'DM Sans', DMSans, sans-serif !important;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body.onboarding-page .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Top bar with brand logo */
+.ob-topbar {
+    width: 100%;
+    max-width: 680px;
+    margin: 36px auto 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.ob-brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.ob-brand-logo:hover {
+    opacity: 0.85;
+}
+
+.ob-brand-logo img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.onboarding-shell {
+    width: 100%;
+    max-width: 680px;
+    margin: 24px auto 48px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 600px) {
+    .ob-topbar {
+        margin: 20px auto 0 auto;
+        padding: 0 16px;
+    }
+
+    .onboarding-shell {
+        margin: 16px auto 36px auto;
+        padding: 0 16px;
+    }
+}
+
+/* Header Section */
+.ob-header {
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+.ob-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 14px;
+}
+
+.ob-tag-num {
+    color: var(--ob-primary);
+    font-weight: 800;
+}
+
+.ob-tag-sep {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.ob-tag-text {
+    color: var(--ob-text-muted);
+}
+
+.ob-title {
+    font-size: 32px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: var(--ob-text-main);
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+@media (max-width: 600px) {
+    .ob-title {
+        font-size: 26px;
+    }
+}
+
+.ob-title-highlight {
+    color: var(--ob-title-highlight);
+    display: block;
+}
+
+.ob-subtitle {
+    font-size: 14px;
+    color: var(--ob-text-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Steps Container */
+.ob-steps-container {
+    width: 100%;
+}
+
+.ob-step {
+    display: none;
+    animation: obFadeIn 0.35s ease forwards;
+}
+
+.ob-step.active {
+    display: block;
+}
+
+@keyframes obFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cards Grid */
+.ob-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 520px) {
+    .ob-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+/* Individual Card */
+.ob-card {
+    background: var(--ob-card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid var(--ob-border);
+    border-radius: 18px;
+    padding: 22px 20px;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    user-select: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.ob-card:hover {
+    background: var(--ob-card-hover);
+    border-color: var(--ob-border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+
+.ob-card.selected {
+    background: rgba(255, 96, 22, 0.08);
+    border-color: var(--ob-primary);
+    box-shadow: 0 0 24px var(--ob-primary-glow), inset 0 0 0 1px var(--ob-primary);
+}
+
+/* Card Icon */
+.ob-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    transition: all 0.2s ease;
+}
+
+.ob-card-icon i {
+    font-size: 20px;
+    color: #CBD5E1;
+    transition: all 0.2s ease;
+}
+
+.ob-card.selected .ob-card-icon {
+    background: var(--ob-primary-light);
+    border-color: rgba(255, 96, 22, 0.35);
+}
+
+.ob-card.selected .ob-card-icon i {
+    color: var(--ob-primary);
+}
+
+/* Card Texts */
+.ob-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ob-text-main);
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+}
+
+.ob-card-desc {
+    font-size: 12.5px;
+    color: var(--ob-text-muted);
+    line-height: 1.4;
+}
+
+/* Section Divider / Secondary Questions */
+.ob-section-block {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ob-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--ob-text-main);
+    margin-bottom: 14px;
+}
+
+/* Input Fields */
+.ob-field {
+    margin-bottom: 16px;
+}
+
+.ob-label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #E2E8F0;
+    margin-bottom: 6px;
+}
+
+.ob-label em {
+    color: var(--ob-primary);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.ob-input,
+.ob-select {
+    width: 100%;
+    padding: 13px 16px;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1.5px solid var(--ob-border) !important;
+    border-radius: 14px !important;
+    color: var(--ob-text-main) !important;
+    font-size: 14px !important;
+    font-family: inherit !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+    transition: all 0.2s ease !important;
+}
+
+.ob-select option {
+    background-color: #111116 !important;
+    color: #FFFFFF !important;
+}
+
+.ob-input::placeholder {
+    color: #64748B !important;
+}
+
+.ob-input:focus,
+.ob-select:focus {
+    border-color: var(--ob-primary) !important;
+    box-shadow: 0 0 0 3px rgba(255, 96, 22, 0.20) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.ob-hint {
+    display: block;
+    font-size: 11.5px;
+    color: var(--ob-text-muted);
+    margin-top: 5px;
+}
+
+/* Two columns row for selects */
+.ob-fields-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+@media (max-width: 520px) {
+    .ob-fields-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Logo Upload Container */
+.ob-upload-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 22px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ob-upload-box:hover {
+    border-color: var(--ob-primary);
+    background: rgba(255, 96, 22, 0.04);
+}
+
+.ob-upload-box i {
+    font-size: 28px;
+    color: var(--ob-primary);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.ob-upload-box input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Actions Bottom Bar */
+.ob-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.ob-btn-back {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #CBD5E1;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid var(--ob-border);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.ob-btn-back:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    border-color: var(--ob-border-hover);
+}
+
+.ob-btn-next,
+.ob-btn-submit {
+    flex: 2;
+    padding: 14px 24px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: var(--ob-primary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 18px var(--ob-primary-glow);
+    transition: all 0.2s ease;
+}
+
+.ob-btn-next:hover,
+.ob-btn-submit:hover {
+    background: var(--ob-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px var(--ob-primary-glow);
+}
+
+.ob-btn-next:disabled,
+.ob-btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Step 5: Success & Email Verification */
+.ob-success-box {
+    background: #0E0E12;
+    border: 1.5px solid var(--ob-border);
+    border-radius: 20px;
+    padding: 36px 24px;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.ob-success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--ob-primary-light);
+    border: 2px solid rgba(255, 96, 22, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+}
+
+.ob-success-icon i {
+    font-size: 30px;
+    color: var(--ob-primary);
+}
+
+.ob-guide-list {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 16px 18px;
+    text-align: left;
+    margin: 22px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ob-guide-item {
+    font-size: 13px;
+    color: #CBD5E1;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+}
+
+.ob-guide-item i {
+    color: var(--ob-primary);
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+.ob-guide-item strong {
+    color: #FFFFFF;
+}
+
+.ob-guide-item em {
+    color: #94A3B8;
+}
+
+/* ─────────────────────────────────────────────
+   SHARED REGISTER & AUTH ELEMENTS
+   ───────────────────────────────────────────── */
+.ob-input.error {
+    border-color: #EF4444 !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+}
+
+.ob-input.success {
+    border-color: #10B981 !important;
+}
+
+.input-message {
+    display: block;
+    font-size: 11.5px;
+    color: #F87171;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.ob-terms-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--ob-border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin: 20px 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ob-checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ob-checkbox {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--ob-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.ob-checkbox-text {
+    font-size: 12.5px;
+    color: #CBD5E1;
+    line-height: 1.45;
+}
+
+.ob-checkbox-text em {
+    color: var(--ob-primary);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.ob-checkbox-text a {
+    color: var(--ob-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.ob-actions-register {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.ob-actions-register .ob-btn-next {
+    width: 100%;
+}
+
+.ob-login-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--ob-text-muted);
+}
+
+.ob-login-link {
+    color: var(--ob-primary);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ob-login-link:hover {
+    color: var(--ob-primary-hover);
+    text-decoration: underline;
+}
+
+.ob-btn-google-soon {
+    width: 100%;
+    padding: 13px 20px;
+    border-radius: 14px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #94A3B8;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid var(--ob-border);
+    cursor: not-allowed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    opacity: 0.65;
+}
+
+/* Field header with action link (e.g. Esqueceu a senha?) */
+.ob-field-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.ob-field-header .ob-label {
+    margin-bottom: 0;
+}
+
+.ob-forgot-link {
+    font-size: 12px;
+    color: var(--ob-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.ob-forgot-link:hover {
+    color: var(--ob-primary-hover);
+    text-decoration: underline;
+}

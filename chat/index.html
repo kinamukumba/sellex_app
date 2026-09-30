@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sellex Chat | Assistente & Suporte para Negócios</title>
+    <meta name="title" content="Sellex Chat | Assistente & Suporte para Negócios">
+    <meta name="description"
+        content="Converse com a Sellex, tire dúvidas sobre catálogo digital, integrações com WhatsApp e impulsione as vendas da sua loja.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/img/favicon/Sellexsimbolo2.png">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./chat.css">
+</head>
+
+<body>
+
+    <!-- ─────────────────────────────────────────────
+         MOBILE HEADER (Mesmo formato e estilo do index.html)
+         ───────────────────────────────────────────── -->
+    <div class="mobile-header-wrapper">
+        <header class="mobile-header-container">
+            <a href="https://sellex.ao" class="mobile-logo" title="Sellex">
+                <img src="../assets/img/logo/headerlogosellex.png" alt="Sellex Logo">
+            </a>
+            <button class="mobile-icon-menu" id="mobileMenuBtn" aria-label="Abrir Menu">
+                <i class="ri-menu-line"></i>
+            </button>
+        </header>
+
+        <!-- Dropdown Menu Mobile -->
+        <div class="mobile-dropdown-menu" id="mobileDropdownMenu">
+            <ul class="mobile-dropdown-list">
+                <li class="mobile-dropdown-item">
+                    <a href="./index.html" class="active">
+                        <i class="ri-chat-1-line"></i> Chat com Sellex
+                    </a>
+                </li>
+                <li class="mobile-dropdown-item">
+                    <a href="./academia/index.html">
+                        <i class="ri-graduation-cap-line"></i> Academia & Vídeos
+                    </a>
+                </li>
+                <li class="mobile-dropdown-item">
+                    <a href="https://sellex.ao">
+                        <i class="ri-home-4-line"></i> Página Principal
+                    </a>
+                </li>
+            </ul>
+            <button class="mobile-theme-toggle" id="mobileThemeToggleBtn">
+                <span>Modo Escuro / Claro</span>
+                <i class="ri-moon-line" id="mobileThemeIcon"></i>
+            </button>
+            <a href="https://app.sellex.ao" class="btn-mobile-access" target="_blank" rel="noopener">
+                Acessar Plataforma
+            </a>
+        </div>
+    </div>
+
+    <!-- ─────────────────────────────────────────────
+         SIDEBAR (Desktop)
+         ───────────────────────────────────────────── -->
+    <aside class="chat-sidebar">
+        <div class="sidebar-top">
+            <a href="https://sellex.ao" class="sidebar-logo" title="Sellex | Página Inicial">
+                <img src="../assets/img/favicon/Sellexsimbolo2.png" alt="Sellex Logo">
+            </a>
+
+            <nav class="sidebar-nav">
+                <a href="./index.html" class="nav-item active" title="Chat com Sellex">
+                    <i class="ri-chat-1-line"></i>
+                    <span>Chat</span>
+                </a>
+                <a href="./academia/index.html" class="nav-item" title="Sellex Academia & Guias">
+                    <i class="ri-graduation-cap-line"></i>
+                    <span>Academia</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <button class="theme-toggle-btn" id="themeToggleBtn" title="Alternar Modo Escuro / Claro">
+                <i class="ri-moon-line" id="themeIcon"></i>
+                <span id="themeLabel">Modo Escuro</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ─────────────────────────────────────────────
+         MAIN CHAT CONTAINER
+         ───────────────────────────────────────────── -->
+    <main class="chat-main-container">
+        <!-- Top Bar Desktop -->
+        <header class="chat-topbar" id="chatTopbar">
+            <div class="topbar-actions">
+                <button class="btn-topbar btn-new-chat" id="btnNewChat">
+                    <i class="ri-add-line"></i> Nova Conversa
+                </button>
+                <a href="https://sellex.ao" class="btn-topbar" target="_blank" rel="noopener">
+                    Ir pra plataforma <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- HERO / EMPTY STATE -->
+        <section class="chat-hero-section" id="chatHeroSection">
+            <h1 class="chat-hero-title">
+                Qual recurso você quer explorar na Sellex?
+            </h1>
+
+            <!-- Big Input Card -->
+            <div class="chat-input-card">
+                <textarea id="heroChatInput" class="chat-textarea" placeholder="Pergunte sobre integração com WhatsApp, catálogo digital, pedidos, taxas de 8%..." rows="2"></textarea>
+                <div class="chat-input-footer">
+                    <span class="input-hint">
+                        <i class="ri-sparkling-fill" style="color: var(--sellex-orange);"></i> IA Sellex pronta para responder
+                    </span>
+                    <button class="btn-send" id="heroSendBtn" title="Enviar mensagem" disabled>
+                        <i class="ri-arrow-up-line"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chips / Sugestões rápidas de temas -->
+            <div class="chips-grid">
+                <button class="chip-item icon-whatsapp" data-query="Como integrar meu catálogo e vendas com o WhatsApp?">
+                    <i class="ri-whatsapp-fill"></i> WhatsApp & Redes
+                </button>
+                <button class="chip-item icon-catalog" data-query="Como funciona o catálogo digital de produtos da Sellex?">
+                    <i class="ri-store-2-fill"></i> Catálogo Digital
+                </button>
+                <button class="chip-item icon-ai" data-query="Como a Inteligência Artificial da Sellex ajuda a atender clientes?">
+                    <i class="ri-robot-2-fill"></i> Atendimento com IA
+                </button>
+                <button class="chip-item icon-orders" data-query="Como organizar e gerir pedidos em tempo real?">
+                    <i class="ri-shopping-bag-3-fill"></i> Gestão de Pedidos
+                </button>
+                <button class="chip-item icon-fee" data-query="Como funciona a comissão de 8% da Sellex?">
+                    <i class="ri-percent-fill"></i> Taxa de 8%
+                </button>
+                <button class="chip-item icon-api" data-query="Existe API para integrar meu sistema existente à Sellex?">
+                    <i class="ri-code-s-slash-line"></i> API & Webhooks
+                </button>
+            </div>
+
+            <!-- Quick Link Below -->
+            <div class="quick-link-wrapper">
+                <a href="./academia/index.html" class="btn-quick-guide">
+                    <i class="ri-play-circle-line"></i> Ver Tutoriais na Academia Sellex
+                </a>
+            </div>
+        </section>
+
+        <!-- ACTIVE CONVERSATION FEED -->
+        <section class="chat-conversation-wrapper" id="chatConversationWrapper">
+            <div class="chat-messages-list" id="chatMessagesList">
+                <!-- Mensagens dinâmicas aqui -->
+            </div>
+        </section>
+
+        <!-- STICKY BOTTOM DOCK FOR ACTIVE CHAT -->
+        <div class="chat-bottom-dock hidden" id="chatBottomDock">
+            <div class="dock-inner">
+                <div class="chat-input-card">
+                    <textarea id="dockChatInput" class="chat-textarea" placeholder="Envie uma nova pergunta para a Sellex..." rows="1"></textarea>
+                    <div class="chat-input-footer">
+                        <span class="input-hint">Pressione Enter para enviar</span>
+                        <button class="btn-send" id="dockSendBtn" title="Enviar mensagem" disabled>
+                            <i class="ri-arrow-up-line"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="./chat.js"></script>
+</body>
+
+</html>

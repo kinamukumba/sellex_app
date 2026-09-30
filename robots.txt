@@ -1,0 +1,42 @@
+# robots.txt para Sellex (https://sellex.ao)
+# Aplicação Principal / SaaS: https://app.sellex.ao
+
+# Regras gerais para todos os motores de busca e rastreadores
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /pages/dashboard/
+
+# Rastejadores de IA (LLMs e Pesquisa Conversacional)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /pages/dashboard/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /pages/dashboard/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /pages/dashboard/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /pages/dashboard/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /pages/dashboard/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /pages/dashboard/
+
+# Sitemap Oficial
+Sitemap: https://sellex.ao/sitemap.xml
